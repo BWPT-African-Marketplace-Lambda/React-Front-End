@@ -1,8 +1,8 @@
 import axios from "axios"
 
-export const SIGHUP_START = "SIGNUP_START";
-export const SIGHUP_SUCCESS = "SIGNUP_SUCCESS";
-export const SIGHUP_ERROR = "SIGNUP_ERROR";
+export const SIGNUP_START = "SIGNUP_START";
+export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
+export const SIGNUP_ERROR = "SIGNUP_ERROR";
 
 export function signup(credentials) {
   // this is our "thunk" function. redux-thunk middleware
@@ -10,7 +10,7 @@ export function signup(credentials) {
   return dispatch => {
     // we can kick off as many actions as we want,
     // whenever we want. allows our action creator to be asyncronous.
-    dispatch({ type: SIGHUP_START });
+    dispatch({ type: SIGNUP_START });
 
     axios
       .post("", credentials)
@@ -19,7 +19,7 @@ export function signup(credentials) {
         localStorage.setItem("user_id", res.data.new_user.id);
       })
       .catch(err =>{
-        dispatch({ type: SIGHUP_ERROR, payload: err.error })
+        dispatch({ type: SIGNUP_ERROR, payload: err.error })
       })
   }
 }
