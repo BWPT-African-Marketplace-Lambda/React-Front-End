@@ -7,7 +7,7 @@ import styled from "styled-components";
 const ItemsData = () => {
   const [data, setData] = useState("");
   const StyledH1 = styled.h1`
-    border-bottom: solid 2px black;
+    border-bottom: solid 2px #D79922;
   `;
   const StyledDiv = styled.div`
     padding: 5%;
@@ -31,7 +31,7 @@ const ItemsData = () => {
     <StyledDiv>
       <StyledH1>Saudi Africa Product Marketplace </StyledH1>
       <ItemList savedData={savedData} />
-     
+      
       </StyledDiv>
   );
 };

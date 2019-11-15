@@ -1,8 +1,8 @@
 import React from "react";
-import { Route, NavLink } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 
 import {
-    Card,
+   CardFooter,
     CardImg,
     CardText,
     CardBody,
@@ -11,26 +11,31 @@ import {
      Button,
     CardGroup
   } from "reactstrap";
+  import Styled from "styled-components";
 
 function ItemCards (props) {
-
+  
+ //Here im finding and then matching id coming from data vs ID coming from props.match.params.id so that  result gets saved on variable created named item, to then
+ //pass the item down on my card with proper property.
 const item = props.savedProps && props.savedProps.find( dataItem => `${dataItem.id}` === props.match.params.id);
 
-
-
 return (
+  <div>
+   
+    <NavLink to="/"> <Button className="Items-Buttons">Back To All Products</Button> </NavLink>
+  
+
     <CardGroup className="Styling-CardGroups">
     
         <CardBody >
-          <CardHeader>
-            <CardTitle>
+          <CardHeader className="CardHeader-Items" >
+            <CardTitle className="H1-CardItemCard">
               <strong>{item.name}</strong>
             </CardTitle>
           </CardHeader>
           <div>
             <CardImg
-              className="ItemList-Image"
-              src={""}
+              src={"https://assets.weforum.org/article/image/large_bBsjfn2r-_U89L3OjVWcck849EoScbK0eI4qw1c0O5w.jpg"}
               alt={item.alt}
             />
             <div>
@@ -48,9 +53,16 @@ return (
               </CardText>
             </div>
           </div>
+          <CardFooter className="Footer-Buttons">
+          <Button className="Items-Buttons">Add To Cart</Button>
+          <Button className="Items-Buttons">Buy Now!</Button>
+          </CardFooter>
         </CardBody>
-
+        
   </CardGroup>
+  <h4>{`Customers that bought "${item.name}", Frequently bought together the following items:`}</h4>
+  </div>
+  
   );
 }
 

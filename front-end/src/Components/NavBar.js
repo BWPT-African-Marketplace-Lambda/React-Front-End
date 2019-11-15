@@ -23,7 +23,7 @@ function NavBar () {
                 <a></a>
             </StyledNavBttm>
            
-            
+           
         </div>
     );
 };
