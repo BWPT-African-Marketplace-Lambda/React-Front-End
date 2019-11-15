@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import NavBar from './Components/NavBar';
-import ItemsData from "./Components/ItemsData";
+import ItemsData from "./Components/ItemsData"
 import './App.css';
 
 
@@ -10,10 +10,8 @@ function App() {
     <div className="App">
 
 
-
-
       <Route path='/' component={NavBar}/>
-      <ItemsData />
+      <ItemsData />   
     </div>
   );
 }

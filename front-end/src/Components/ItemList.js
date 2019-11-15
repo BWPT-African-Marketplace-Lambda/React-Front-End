@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   Card,
   CardImg,
@@ -11,6 +11,8 @@ import {
 } from "reactstrap";
 
 import styled from "styled-components";
+import {Link,Route} from "react-router-dom";
+import ItemCard from "./ItemCard";
 
 const BodyCard = styled.div`
   display: flex;
@@ -18,10 +20,16 @@ const BodyCard = styled.div`
 `;
 
 const ItemList = props => {
-  console.log(props.savedData);
 
+  const [savedProps, setSavedProps] = useState(props.savedData)
+
+  
+
+ 
   return (
+    
     <CardGroup className="Styling-CardGroups">
+       <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
       {props.savedData &&
         props.savedData.map(data => (
           <CardBody key={data.id}>
@@ -50,11 +58,14 @@ const ItemList = props => {
                   {` ${data.description}`}
                 </CardText>
 
-                <Button>Check this item out!</Button>
+                <Link to={`/ItemList/${data.id}`}> <Button>Check this item out!</Button> </Link>
               </div>
             </BodyCard>
           </CardBody>
         ))}
+       
+       
+
     </CardGroup>
   );
 };

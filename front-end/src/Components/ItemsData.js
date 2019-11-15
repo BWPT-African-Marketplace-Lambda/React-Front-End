@@ -3,6 +3,7 @@ import axios from "axios";
 import ItemList from "./ItemList";
 import styled from "styled-components";
 
+
 const ItemsData = () => {
   const [data, setData] = useState("");
   const StyledH1 = styled.h1`
@@ -17,6 +18,7 @@ const ItemsData = () => {
       .get("https://african-marketplace-bw.herokuapp.com/api/items")
       .then(res => {
         setData(res.data);
+       
       })
       .catch(err => {
         console.log(err);
@@ -29,7 +31,8 @@ const ItemsData = () => {
     <StyledDiv>
       <StyledH1>Saudi Africa Product Marketplace </StyledH1>
       <ItemList savedData={savedData} />
-    </StyledDiv>
+     
+      </StyledDiv>
   );
 };
 export default ItemsData;

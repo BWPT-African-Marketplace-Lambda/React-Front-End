@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+
+
 //import Search from './Search';
 
 const StyledNavTop = styled.div`
@@ -20,6 +22,8 @@ function NavBar () {
             <StyledNavBttm>
                 <a></a>
             </StyledNavBttm>
+           
+            
         </div>
     );
 };
