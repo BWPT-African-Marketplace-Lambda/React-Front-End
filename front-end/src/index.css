@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.ItemList-Image {
+  width: 15%;
+  border-radius: 80%;
+}
+.Styling-CardGroups {
+  width: 80%;
+  margin-left: 20%;
+  border-left: 2px solid black;
+}
