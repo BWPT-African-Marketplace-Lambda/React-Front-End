@@ -10,7 +10,8 @@ function App() {
     <div className="App">
 
 
-    
+
+
       <Route path='/' component={NavBar}/>
       <ItemsData />
     </div>

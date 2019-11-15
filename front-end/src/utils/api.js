@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-export default getToken = () => {
+export const getToken = () => {
     return localStorage.getItem("token")
 }
 
 export default function api() {
     axios.create({
-        baseURL: "https://african-marketplace-bw.herokuapp.com",
+        baseURL: "https://african-marketplace-bw.herokuapp.com/api",
         headers: {
             Authorization: getToken()
         }
