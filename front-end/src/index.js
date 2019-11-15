@@ -8,6 +8,7 @@ import { reducer as loginReducer } from "./reducers/login"
 import { reducer as signupReducer } from "./reducers/signup"
 import { reducer as fetchItemsReducer } from "./reducers/fetchItems"
 import { BrowserRouter as Router } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
 import App from './App';
 
