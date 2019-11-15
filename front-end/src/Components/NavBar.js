@@ -33,7 +33,6 @@ const StyledLinks = styled.div`
     background: #EFE2BA;
     display: flex;
     justify-content: space-between;
-
     border-radius: 10px;
     width: 50%;
     margin: 0 auto;
@@ -48,6 +47,11 @@ const StyledP = styled.p`
     font-style: none;
     color: #D79922;
     text-shadow: 1px 1px black;
+    :hover {
+        background: #F13C20;
+        border-radius: 10px;
+        color: white;
+    }
 `;
 
 function NavBar () {
