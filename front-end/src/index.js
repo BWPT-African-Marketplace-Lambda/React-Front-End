@@ -7,6 +7,7 @@ import logger from "redux-logger";
 import { reducer as loginReducer } from "./reducers/login"
 import { reducer as signupReducer } from "./reducers/signup"
 import { reducer as fetchItemsReducer } from "./reducers/fetchItems"
+import { reducer as fetchUserByIdReducer } from "./reducers/userItems"
 import { BrowserRouter as Router } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
@@ -17,7 +18,8 @@ import App from './App';
 const rootReducer = combineReducers({
     user: loginReducer,
     newUser: signupReducer,
-    fetchItems: fetchItemsReducer
+    fetchItems: fetchItemsReducer,
+    userInfo: fetchUserByIdReducer
 });
 
 // create our store or "global state object"
