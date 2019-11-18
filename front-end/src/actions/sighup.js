@@ -1,4 +1,4 @@
-import axios from "axios"
+import api from "../utils/api"
 
 export const SIGNUP_START = "SIGNUP_START";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
@@ -12,8 +12,8 @@ export function signup(credentials) {
     // whenever we want. allows our action creator to be asyncronous.
     dispatch({ type: SIGNUP_START });
 
-    axios
-      .post("", credentials)
+    api()
+      .post("/auth/register", credentials)
       .then(res => {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user_id", res.data.new_user.id);

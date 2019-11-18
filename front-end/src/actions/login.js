@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../utils/api";
 
 export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -11,8 +11,8 @@ export function login(credentials) {
   return dispatch => {
   dispatch({ type: LOGIN_START });
 
-    axios
-      .post("", credentials)
+    api()
+      .post("/auth/login", credentials)
       .then(res => {
             // enter the "success" state
             dispatch({ type: LOGIN_SUCCESS, payload: res.data.user })

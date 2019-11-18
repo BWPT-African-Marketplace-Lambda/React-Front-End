@@ -17,7 +17,7 @@ const initialState = {
 // all the possible states, and actions that can be taken
 // which result in a new state.
 export function reducer(state = initialState, action) {
-  switch (applicationCache.type) {
+  switch (action.type) {
     case FETCH_ITEMS_START:
       return {
         ...state,

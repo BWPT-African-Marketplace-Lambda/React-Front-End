@@ -1,4 +1,4 @@
-import axios from "axios"
+import api from "../utils/api"
 
 export const FETCH_ITEMS_START = "FETCH_ITEMS_START";
 export const FETCH_ITEMS_SUCCESS = "FETCH_ITEMS_SUCCESS";
@@ -12,8 +12,8 @@ export function fetchItems () {
     // whenever we want. allows our action creator to be asyncronous.
     dispatch({ type: FETCH_ITEMS_START });
 
-    axios
-      .get("")
+    api()
+      .get("/items")
       .then(res => {
         // enter the "success" state
         dispatch({ type: FETCH_ITEMS_SUCCESS, payload: res.data });
