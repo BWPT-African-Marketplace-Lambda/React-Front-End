@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../images/Saudi_Logo.png';
+
 //import Search from './Search';
 
 const StyledNav = styled.div`
@@ -58,6 +59,16 @@ function NavBar () {
 
     return (
         <div>
+
+            <StyledNavTop>
+                <h1>Sauti</h1>
+            </StyledNavTop>
+            <StyledNavBttm>
+                <a></a>
+            </StyledNavBttm>
+           
+           
+
             <StyledNav>
                 <StyledImg src={logo} alt='logo'/>
                 <StyledRight>

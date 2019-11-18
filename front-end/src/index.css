@@ -11,6 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* ItemCard ItemList & ItemsData styling STARTS here */
 .ItemList-Image {
   width: 15%;
   border-radius: 80%;
@@ -18,5 +20,40 @@ code {
 .Styling-CardGroups {
   width: 80%;
   margin-left: 20%;
-  border-left: 2px solid black;
+  border-left: 2px dotted #D79922;
+  
+  
 }
+.H1-CardItemCard{
+  font-size:2rem;
+}
+.Footer-Buttons{
+  display:flex;
+  justify-content: space-around;
+}
+
+.Items-Buttons{
+  background-color:#4056A1;
+  color:#EFE2BA
+}
+.Items-Buttons:hover{
+  background-color:#F13C20;
+  color:white;
+}
+
+.CardHeader-Items{
+  background-color:#EFE2BA;
+}
+.Footer-Buttons{
+  background-color:#EFE2BA;
+ 
+}
+.BodyCard-items{
+  padding:5%;
+  background-color: #D79922;
+  
+}
+.CardBody-Items{
+  border-bottom: solid 2px #D79922;
+}
+/* ItemCard ItemList & ItemsData styling starts ENDS here */
