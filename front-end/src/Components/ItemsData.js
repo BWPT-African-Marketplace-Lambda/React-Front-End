@@ -3,13 +3,19 @@ import axios from "axios";
 import ItemList from "./ItemList";
 import styled from "styled-components";
 
+
 const ItemsData = () => {
   const [data, setData] = useState("");
   const StyledH1 = styled.h1`
-    border-bottom: solid 2px black;
+    
+   
+    font-size: 2.5rem; font-weight: 300; color: #ffcc66; margin: 0 0 24px;
   `;
   const StyledDiv = styled.div`
     padding: 5%;
+  `;
+  const StyledStrong = styled.strong`
+  color: #7c795d; font-family: 'Trocchi', serif; font-size: 5rem; font-weight: normal; line-height: 48px; margin: 0;
   `;
 
   useEffect(() => {
@@ -17,6 +23,7 @@ const ItemsData = () => {
       .get("https://african-marketplace-bw.herokuapp.com/api/items")
       .then(res => {
         setData(res.data);
+       
       })
       .catch(err => {
         console.log(err);
@@ -27,9 +34,12 @@ const ItemsData = () => {
 
   return (
     <StyledDiv>
-      <StyledH1>Saudi Africa Product Marketplace </StyledH1>
+      <StyledH1><StyledStrong>Saudi Africa</StyledStrong> <br></br> Product Marketplace </StyledH1>
+      <hr></hr>
+      
       <ItemList savedData={savedData} />
-    </StyledDiv>
+      
+      </StyledDiv>
   );
 };
 export default ItemsData;
