@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../images/Saudi_Logo.png';
-
 //import Search from './Search';
 
 const StyledNav = styled.div`
@@ -12,6 +11,25 @@ const StyledNav = styled.div`
     align-items: center;
     padding: 1% 5%;
 `;
+
+const StyledImg = styled.img`
+    max-height: 15vh;
+`;
+
+const StyledRight = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 35%;
+    font-family: 'Calistoga', cursive;
+    font-size: 1.2rem;
+`;
+
+const StyledEmpower = styled.p`
+    font-style: italic;
+`;
+
+
 
 const StyledImg = styled.img`
     max-height: 15vh;
@@ -59,16 +77,6 @@ function NavBar () {
 
     return (
         <div>
-
-            <StyledNavTop>
-                <h1>Sauti</h1>
-            </StyledNavTop>
-            <StyledNavBttm>
-                <a></a>
-            </StyledNavBttm>
-           
-           
-
             <StyledNav>
                 <StyledImg src={logo} alt='logo'/>
                 <StyledRight>

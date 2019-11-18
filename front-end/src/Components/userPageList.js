@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react'
 import { connect } from "react-redux"
 import { fetchUserInfo } from "../actions/userItems"
-function userPage() {
+import UserItem from "./UserItem"
+import UserCard from "./UserCard"
+
+function userPage(props) {
   useEffect(() => {
     props.fetchUserInfo();
   }, [])
@@ -14,7 +17,11 @@ function userPage() {
         <h1>Loading...</h1>
       ) : (
         <div className="userPage">
+          <UserCard userInfo={props.userInfo.user} />
           <h1>My Items</h1>
+          {props.userInfo.user.items.map((item, index) => {
+          <UserItem userItem={item} key={index} />
+        })}
         </div>
       )}
     </>
