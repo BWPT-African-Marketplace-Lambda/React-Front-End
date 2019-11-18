@@ -12,9 +12,10 @@ function Login(props) {
     const handleSubmit = event => {
         event.preventDefault()
         props.login(user)
+            props.history.push("/userPageList")
             // .then(() => {
-            //     // props.history.push("/userPageList")
-            //     console.log("Successful Login!")
+            //     props.history.push("/userPageList")
+            //     // console.log("Successful Login!")
             // }).catch(err => {
             //     console.log(err)
             // })
