@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import Search from './Search';
 
 
 import {
@@ -31,14 +32,18 @@ const ItemList = props => {
 const scrollup =() => {
   window.scrollTo(0, 0);
 }
- 
+  const searchResultDisplay = search => {
+    const results = savedProps.filter(datum=>datum.name.toLowerCase().includes(search.toLowerCase()));
+  setSavedProps(results);
+};
+
   return (
     <div>
-
+    <Search searchResultDisplay={searchResultDisplay}/>
     <CardGroup className="Styling-CardGroups">
-       <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
-      {props.savedData &&
-        props.savedData.map(data => (
+        <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
+      {savedProps &&
+        savedProps.map(data => (
           <CardBody key={data.id} className="CardBody-Items" >
             <CardHeader className="CardHeader-Items">
               <CardTitle>
@@ -66,7 +71,7 @@ const scrollup =() => {
                   {` ${data.description}`}
                 </CardText>
                                                                     
-                      </div>
+              </div>
                       
             </BodyCard>
             <CardFooter className="Footer-Buttons">
