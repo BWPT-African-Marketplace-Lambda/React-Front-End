@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import VerticalImage from "../images/vertical_image.png"
 
 
 import {
@@ -22,6 +23,21 @@ const BodyCard = styled.div`
   justify-content: space-around;
 `;
 
+const PageLayout =styled.div`
+display:flex;
+
+`;
+
+const ImgStyle = styled.img`
+width:70%;
+height:30%
+margin-bottom:2%;
+border-radius:50px;
+
+`;
+
+
+
 const ItemList = props => {
 
   const [savedProps, setSavedProps] = useState(props.savedData)
@@ -33,7 +49,21 @@ const scrollup =() => {
 }
  
   return (
+    <PageLayout>
+
     <div>
+    <ImgStyle 
+      src="https://farm6.static.flickr.com/5595/15069806929_50448faed9_b.jpg"
+      alt="Market photo"
+
+      />
+      <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+     
+    </div>
 
     <CardGroup className="Styling-CardGroups">
        <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
@@ -77,7 +107,7 @@ const scrollup =() => {
           </CardBody>
         ))}
     </CardGroup>
-    </div>
+    </PageLayout>
   );
 };
 export default ItemList;

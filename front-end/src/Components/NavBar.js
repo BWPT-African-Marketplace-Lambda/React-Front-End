@@ -60,15 +60,7 @@ function NavBar () {
     return (
         <div>
 
-            <StyledNavTop>
-                <h1>Sauti</h1>
-            </StyledNavTop>
-            <StyledNavBttm>
-                <a></a>
-            </StyledNavBttm>
-           
-           
-
+                   
             <StyledNav>
                 <StyledImg src={logo} alt='logo'/>
                 <StyledRight>
