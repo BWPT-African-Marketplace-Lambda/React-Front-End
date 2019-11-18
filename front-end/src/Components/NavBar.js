@@ -29,24 +29,6 @@ const StyledEmpower = styled.p`
 `;
 
 
-
-const StyledImg = styled.img`
-    max-height: 15vh;
-`;
-
-const StyledRight = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 35%;
-    font-family: 'Calistoga', cursive;
-    font-size: 1.2rem;
-`;
-
-const StyledEmpower = styled.p`
-    font-style: italic;
-`;
-
 const StyledLinks = styled.div`
     background: #EFE2BA;
     display: flex;
