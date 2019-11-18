@@ -1,8 +1,6 @@
-import React, { useState, useReducer } from 'react';
-import api from '../utils/api';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { signup } from '../actions/sighup';
-import { SIGNUP_START, SIGNUP_SUCCESS, SIGHUP_ERROR, SIGNUP_ERROR } from '../actions/sighup';
 
 function Signup(props) {
     
@@ -14,17 +12,24 @@ function Signup(props) {
 
     const handleSubmit = event => {
         event.preventDefault()
-
-        dispatch({type: SIGNUP_SUCCESS, payload: user || props.newUser})
-
         //Add new user data to the api data base
-        api()
-            .post("/auth/register", state)
-            .then(res => {
-                console.log(res)
-            }).catch(err => {
-                console.log(err)
-            })
+        props.signup(user)
+        // console.log(props)
+        // props.signup(user)
+        //     .then(() => {
+        //         // props.history.push("/userPageList")
+        //         console.log("Successful Signup!")
+        //     })
+        //     .catch(err => {
+        //         console.log(err)
+        //     })
+    }
+
+    const handleChange = event => {
+        setUser({
+            ...user,
+            [event.target.name]: event.target.value
+        })
     }
 
     return (
@@ -54,4 +59,8 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Signup);
+const mapDispatchToProps = {
+    signup
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);
