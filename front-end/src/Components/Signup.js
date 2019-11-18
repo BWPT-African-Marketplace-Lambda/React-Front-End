@@ -32,13 +32,6 @@ function Signup(props) {
         //     })
     }
 
-    const handleChange = event => {
-        setUser({
-            ...user,
-            [event.target.name]: event.target.value
-        })
-    }
-
     return (
         <form onSubmit={handleSubmit}>
             <input
