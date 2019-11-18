@@ -10,8 +10,16 @@ function Signup(props) {
         password:""
     })
 
+    const handleChange = event => {
+        setUser({
+            ...user,
+            [event.target.name]: event.target.value
+        })
+    }
+
     const handleSubmit = event => {
         event.preventDefault()
+
         //Add new user data to the api data base
         props.signup(user)
         // console.log(props)

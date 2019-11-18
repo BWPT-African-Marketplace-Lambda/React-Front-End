@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../images/Saudi_Logo.png';
-//import Search from './Search';
 
 const StyledNav = styled.div`
     background: #D79922;
@@ -37,7 +36,6 @@ const StyledLinks = styled.div`
     width: 50%;
     margin: 0 auto;
 `;
-
 
 const StyledP = styled.p`
     font-family: 'Calistoga', cursive;
