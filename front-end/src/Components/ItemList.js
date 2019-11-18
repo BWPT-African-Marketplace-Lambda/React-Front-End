@@ -27,13 +27,14 @@ const ItemList = props => {
   const [savedProps, setSavedProps] = useState(props.savedData)
 
 //Since i have itemList and ItemCard rendering together on same page through App.js
-//ill create this function so that on a click page will move up to the Top
+//ill create this function so that when you click the "check this item out!" it would take customer to the item they are trying to purchase.
 const scrollup =() => {
   window.scrollTo(0, 0);
 }
  
   return (
-    
+    <div>
+
     <CardGroup className="Styling-CardGroups">
        <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
       {props.savedData &&
@@ -52,15 +53,16 @@ const scrollup =() => {
               />
               <div>
                 <CardText>
-                  <strong>Title:</strong>
+                  <strong>Title:</strong><br></br>
+                  
                   {` ${data.name}`}
                 </CardText>
                 <CardText>
-                  <strong>Price:</strong>
+                  <strong>Price:</strong><br></br>
                   {` $${data.price}`}
                 </CardText>
                 <CardText>
-                  <strong>Description:</strong>
+                  <strong>Description:</strong><br></br>
                   {` ${data.description}`}
                 </CardText>
                                                                     
@@ -74,9 +76,8 @@ const scrollup =() => {
             </CardFooter>  
           </CardBody>
         ))}
-           
-
     </CardGroup>
+    </div>
   );
 };
 export default ItemList;

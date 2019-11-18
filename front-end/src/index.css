@@ -49,11 +49,33 @@ code {
  
 }
 .BodyCard-items{
-  padding:5%;
+  padding:3%;
   background-color: #D79922;
   
 }
 .CardBody-Items{
-  border-bottom: solid 2px #D79922;
+  border-bottom: solid 4px #D79922;
+}
+
+hr{
+	border-top: 2px dotted #D79922;;
+  text-align: center;
+  margin-bottom:3%;
+  
+  
+}
+hr:after {
+	content: '₳';
+	display: inline-block;
+	position: relative;
+	top: -14px;
+	padding: 0 6px;
+	background: #f0f0f0;
+	color: #7c795d;
+	font-size: 20px;
+	-webkit-transform: rotate(20deg);
+	-moz-transform: rotate(20deg);
+  transform: rotate(20deg);
+  
 }
 /* ItemCard ItemList & ItemsData styling starts ENDS here */
