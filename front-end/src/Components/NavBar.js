@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../images/Saudi_Logo.png';
-//import Search from './Search';
 
 const StyledNav = styled.div`
     background: #D79922;
