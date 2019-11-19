@@ -13,12 +13,7 @@ function Login(props) {
         event.preventDefault()
         props.login(user)
             props.history.push("/userPageList")
-            // .then(() => {
-            //     props.history.push("/userPageList")
-            //     // console.log("Successful Login!")
-            // }).catch(err => {
-            //     console.log(err)
-            // })
+            
     }
 
     const handleChange = event => {

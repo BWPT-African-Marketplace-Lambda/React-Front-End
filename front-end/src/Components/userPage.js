@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from "react-redux"
 import { fetchUserInfo } from "../actions/userItems"
 import { fetchItems } from "../actions/fetchItems"
+import { updateUserBio } from "../actions/updateUserBio"
 import UserCard from "./UserCard"
 import styled from "styled-components";
 
@@ -32,8 +33,13 @@ function UserPage(props) {
       {props.isInfoLoading ? (
         <h1>Loading...</h1>
       ) : (
-          <div className="userPage">
-            <UserCard userInfo={props.userInfo} />
+          <div>
+            <UserCard 
+            userInfo={props.userInfo}
+            userBio={props.userBio}
+            updateUserBio={props.updateUserBio}
+            />
+
             <StyledDiv>
               <StyledH1>
                 <StyledStrong>Saudi Africa</StyledStrong>
@@ -56,7 +62,8 @@ function mapStateToProps(state) {
   return {
     userInfo: state.userInfo.user,
     isInfoLoading: state.user.isLoading,
-    userInfoError: state.user.error
+    userInfoError: state.user.error,
+    userBio: state.userBio.userBio
   }
 }
 
@@ -64,7 +71,8 @@ const mapDispatchToProps = {
   // send a version of our action creator that's attached to
   // the dispatcher to the component as a prop
   fetchUserInfo,
-  fetchItems
+  fetchItems,
+  updateUserBio
 }
 
 export default connect(
