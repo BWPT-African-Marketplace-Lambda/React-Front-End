@@ -8,6 +8,7 @@ import { reducer as loginReducer } from "./reducers/login"
 import { reducer as signupReducer } from "./reducers/signup"
 import { reducer as fetchItemsReducer } from "./reducers/fetchItems"
 import { reducer as fetchUserByIdReducer } from "./reducers/userItems"
+import { reducer as addItemReducer } from "./reducers/addItem"
 import { BrowserRouter as Router } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
     user: loginReducer,
     newUser: signupReducer,
     fetchItems: fetchItemsReducer,
-    userInfo: fetchUserByIdReducer
+    userInfo: fetchUserByIdReducer,
+    newItem: addItemReducer
 });
 
 // create our store or "global state object"

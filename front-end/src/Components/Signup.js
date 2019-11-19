@@ -19,25 +19,15 @@ function Signup(props) {
 
     const handleSubmit = event => {
         event.preventDefault()
-
         //Add new user data to the api data base
+      
         props.signup(user)
-        // console.log(props)
-        // props.signup(user)
-        //     .then(() => {
-        //         // props.history.push("/userPageList")
-        //         console.log("Successful Signup!")
-        //     })
-        //     .catch(err => {
-        //         console.log(err)
-        //     })
-    }
-
-    const handleChange = event => {
-        setUser({
-            ...user,
-            [event.target.name]: event.target.value
-        })
+            .then(() => {
+                props.history.push("/userPageList")
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     return (
