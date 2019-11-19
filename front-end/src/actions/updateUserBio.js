@@ -1,35 +1,22 @@
-import {
-  UPDATE_USER_BIO_START,
-  UPDATE_USER_BIO_SUCCESS,
-  UPDATE_USER_BIO_ERROR
-} from "../actions/updateUserBio"
 
-const initialState = {
-  userBio: {},
-  isLoading: false,
-  error: null
-};
 
-export function reducer(state = initialState, action) {
-  switch (action.type) {
-    case UPDATE_USER_BIO_START:
-      return {
-        ...state,
-        isLoading: true
-      };
-    case UPDATE_USER_BIO_SUCCESS:
-      return {
-        ...state,
-        userBio: action.payload,
-        isLoading: false
-      };
-    case UPDATE_USER_BIO_ERROR:
-      return {
-        ...state,
-        error: action.payload,
-        isLoading: false
-      }
-    default:
-      return state
+import api from "../utils/api"
+
+export const UPDATE_USER_BIO_START = "UPDATE_USER_BIO_START"
+export const UPDATE_USER_BIO_SUCCESS = "UPDATE_USER_BIO_SUCCESS"
+export const UPDATE_USER_BIO_ERROR = "UPDATE_USER_BIO_ERROR"
+
+export function updateUserBio (updatedInfo) {
+  return dispatch => {
+    dispatchEvent({ type: UPDATE_USER_BIO_START });
+
+    api()
+    .put(`/users/${localStorage.getItem("user_id")}`, updatedInfo)
+    .then(res => {
+      dispatch({ type: UPDATE_USER_BIO_SUCCESS, payload: res.data })
+    })
+    .catch(err => {
+      dispatch({ type: UPDATE_USER_BIO_ERROR, payload: err })
+    })
   }
 }
