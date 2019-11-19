@@ -14,12 +14,7 @@ import {
   
 
 function ItemCards (props) {
-<<<<<<< HEAD
   console.log(props);
-=======
-  console.log(props)
-  
->>>>>>> 38b4e01ae9fd82ccf7d12d2466a0f70bcfccff3a
  //Here im finding and then matching id coming from data vs ID coming from props.match.params.id so that  result gets saved on variable created named item, to then
  //pass the item down on my card with proper property.
 const item = props.savedProps && props.savedProps.find( dataItem => `${dataItem.id}` === props.match.params.id);
