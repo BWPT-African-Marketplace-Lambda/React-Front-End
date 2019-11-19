@@ -20,7 +20,6 @@ function Signup(props) {
     const handleSubmit = event => {
         event.preventDefault()
         //Add new user data to the api data base
-      
         props.signup(user)
         // console.log(props)
         // props.signup(user)
@@ -43,7 +42,7 @@ function Signup(props) {
                 placeholder="Email"
                 onChange={handleChange}
             />
-             <input
+            <input
                 type="text"
                 name="password"
                 value={user.password}

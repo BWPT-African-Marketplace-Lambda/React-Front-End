@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import VerticalImage from "../images/vertical_image.png";
 import Search from './Search';
 import SearchByType from './SearchByType';
 
@@ -10,7 +11,7 @@ import {
   CardBody,
   CardHeader,
   CardTitle,
-   Button,
+  Button,
   CardGroup
 } from "reactstrap";
 
@@ -24,22 +25,40 @@ const BodyCard = styled.div`
   justify-content: space-around;
 `;
 
+const PageLayout =styled.div`
+display:flex;
+
+`;
+
+const ImgStyle = styled.img`
+width:100%;
+padding-right:1.5%;
+
+
+`;
+
+const ImgDiv = styled.div`
+width: 20%
+`;
+
+
+
 const ItemList = props => {
 
   const [savedProps, setSavedProps] = useState(props.savedData)
 
-//Since i have itemList and ItemCard rendering together on same page through App.js
-//ill create this function so that when you click the "check this item out!" it would take customer to the item they are trying to purchase.
+/* //Since i have itemList and ItemCard rendering together on same page through App.js */
+/* //ill create this function so that when you click the "check this item out!" it would take customer to the item they are trying to purchase. */
 const scrollup =() => {
   window.scrollTo(0, 0);
 }
   const searchResultDisplay = search => {
     const results = savedProps.filter(datum=>datum.name.toLowerCase().includes(search.toLowerCase()));
-  setSavedProps(results);
+    setSavedProps(results);
 };
 
   return (
-    <div>
+    <PageLayout>
     <CardGroup className="Styling-CardGroups">
     <Search searchResultDisplay={searchResultDisplay}/>
     <SearchByType/>
@@ -84,7 +103,7 @@ const scrollup =() => {
           </CardBody>
         ))}
     </CardGroup>
-    </div>
+    </PageLayout>
   );
 };
 export default ItemList;
