@@ -22,7 +22,7 @@ function Signup(props) {
         //Add new user data to the api data base
       
         props.signup(user)
-          props.history.push("/userPageList")  
+        props.history.push("/userPageList")
     }
 
     return (
