@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../images/Saudi_Logo.png';
 
-//import Search from './Search';
-
 const StyledNav = styled.div`
     background: #D79922;
     display: flex;
@@ -29,6 +27,7 @@ const StyledRight = styled.div`
 const StyledEmpower = styled.p`
     font-style: italic;
 `;
+
 
 const StyledLinks = styled.div`
     background: #EFE2BA;

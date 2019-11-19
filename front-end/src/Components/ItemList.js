@@ -1,5 +1,6 @@
 import React,{useState} from "react";
-import VerticalImage from "../images/vertical_image.png"
+import VerticalImage from "../images/vertical_image.png";
+import Search from './Search';
 
 
 import {
@@ -47,7 +48,11 @@ const ItemList = props => {
 const scrollup =() => {
   window.scrollTo(0, 0);
 }
- 
+  const searchResultDisplay = search => {
+    const results = savedProps.filter(datum=>datum.name.toLowerCase().includes(search.toLowerCase()));
+  setSavedProps(results);
+};
+
   return (
     <PageLayout>
 
@@ -64,11 +69,12 @@ const scrollup =() => {
       />
      
     </div>
-
+    
     <CardGroup className="Styling-CardGroups">
-       <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
-      {props.savedData &&
-        props.savedData.map(data => (
+    <Search searchResultDisplay={searchResultDisplay}/>
+        <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
+      {savedProps &&
+        savedProps.map(data => (
           <CardBody key={data.id} className="CardBody-Items" >
             <CardHeader className="CardHeader-Items">
               <CardTitle>
@@ -96,7 +102,7 @@ const scrollup =() => {
                   {` ${data.description}`}
                 </CardText>
                                                                     
-                      </div>
+              </div>
                       
             </BodyCard>
             <CardFooter className="Footer-Buttons">
