@@ -30,11 +30,14 @@ display:flex;
 `;
 
 const ImgStyle = styled.img`
-width:70%;
-height:30%
-margin-bottom:2%;
-border-radius:50px;
+width:100%;
+padding-right:1.5%;
 
+
+`;
+
+const ImgDiv = styled.div`
+width: 20%
 `;
 
 
@@ -56,19 +59,43 @@ const scrollup =() => {
   return (
     <PageLayout>
 
-    <div>
-    <ImgStyle 
-      src="https://farm6.static.flickr.com/5595/15069806929_50448faed9_b.jpg"
-      alt="Market photo"
-
-      />
+    <ImgDiv>
+    
       <ImgStyle 
       src={VerticalImage}
       alt="vertical image"
       
       />
+       <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+       <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+
+<ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+       <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+       <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+      
+      
      
-    </div>
+    </ImgDiv>
     
     <CardGroup className="Styling-CardGroups">
     <Search searchResultDisplay={searchResultDisplay}/>

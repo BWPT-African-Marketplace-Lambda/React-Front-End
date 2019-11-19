@@ -5,7 +5,7 @@ function Search (props) {
 
     const [query, setQuery]=useState('');
 
-    const handleChange = event => {
+    const handleChangeSearch = event => {
         setQuery(event.target.value)
     };
 
@@ -25,7 +25,7 @@ function Search (props) {
                     type='text'
                     name='name'
                     value={query.name}
-                    onChange={handleChange}
+                    onChange={handleChangeSearch}
                     placeholder='type product name'
                 />
             </label>
