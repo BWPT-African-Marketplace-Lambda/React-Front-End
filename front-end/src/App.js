@@ -2,10 +2,9 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import ItemsData from "./Components/ItemsData";
-import Login from './Components/Login';
-import SignUp from './Components/Signup';
 import './App.css';
-
+import Login from "./Components/Login"
+import Signup from "./Components/Signup"
 
 function App() {
   return (
@@ -13,8 +12,6 @@ function App() {
 
       <Route path='/' component={NavBar}/>
        <ItemsData/>
-      
-       
     </div>
   );
 }

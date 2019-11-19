@@ -1,4 +1,5 @@
 import api from "../utils/api"
+// import axios from "axios"
 
 export const SIGNUP_START = "SIGNUP_START";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
@@ -13,8 +14,9 @@ export function signup(credentials) {
     dispatch({ type: SIGNUP_START });
 
     api()
-      .post("/auth/register", credentials)
+      .post("https://african-marketplace-bw.herokuapp.com/api/auth/register", credentials)
       .then(res => {
+        dispatch({ type: SIGNUP_SUCCESS, payload: res.data })
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user_id", res.data.new_user.id);
       })
