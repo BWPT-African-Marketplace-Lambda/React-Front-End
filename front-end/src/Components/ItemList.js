@@ -39,8 +39,9 @@ const scrollup =() => {
 
   return (
     <div>
-    <Search searchResultDisplay={searchResultDisplay}/>
     <CardGroup className="Styling-CardGroups">
+    <Search searchResultDisplay={searchResultDisplay}/>
+    <SearchByType/>
         <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
       {savedProps &&
         savedProps.map(data => (

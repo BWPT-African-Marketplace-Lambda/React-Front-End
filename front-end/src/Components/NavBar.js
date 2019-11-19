@@ -62,8 +62,8 @@ function NavBar () {
                     <StyledEmpower>empowering small business owners</StyledEmpower>
                     <StyledLinks>
                         <Link to='/'><StyledP>Home</StyledP></Link>
-                        <Link to='/'><StyledP>Log In</StyledP></Link>
-                        <Link to='/'><StyledP>Sign Up</StyledP></Link>
+                        <Link to='/login'><StyledP>Log In</StyledP></Link>
+                        <Link to='/signup'><StyledP>Sign Up</StyledP></Link>
                     </StyledLinks>
                 </StyledRight>
             </StyledNav>
