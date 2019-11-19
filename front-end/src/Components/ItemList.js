@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import VerticalImage from "../images/vertical_image.png";
 import Search from './Search';
-import SearchByType from './SearchByType';
 
 
 import {
@@ -11,7 +10,7 @@ import {
   CardBody,
   CardHeader,
   CardTitle,
-  Button,
+   Button,
   CardGroup
 } from "reactstrap";
 
@@ -41,27 +40,63 @@ const ImgDiv = styled.div`
 width: 20%
 `;
 
-
-
 const ItemList = props => {
 
   const [savedProps, setSavedProps] = useState(props.savedData)
 
 /* //Since i have itemList and ItemCard rendering together on same page through App.js */
 /* //ill create this function so that when you click the "check this item out!" it would take customer to the item they are trying to purchase. */
-const scrollup =() => {
-  window.scrollTo(0, 0);
-}
+  const scrollup =() => {
+    window.scrollTo(0, 0);
+};
   const searchResultDisplay = search => {
     const results = savedProps.filter(datum=>datum.name.toLowerCase().includes(search.toLowerCase()));
     setSavedProps(results);
 };
 
-  return (
+return (
     <PageLayout>
+
+    <ImgDiv>
+    
+      <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+       <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+       <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+
+<ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+       <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+       <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+      
+      
+     
+    </ImgDiv>
+    
     <CardGroup className="Styling-CardGroups">
     <Search searchResultDisplay={searchResultDisplay}/>
-    <SearchByType/>
         <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
       {savedProps &&
         savedProps.map(data => (
