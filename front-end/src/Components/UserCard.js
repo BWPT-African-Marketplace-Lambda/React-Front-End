@@ -1,8 +1,8 @@
 import React from 'react'
 
-function UserCard() {
+function UserCard(props) {
   return (
-    <div>
+    <div className="userCard" >
       
     </div>
   )

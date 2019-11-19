@@ -19,10 +19,8 @@ code {
 }
 .Styling-CardGroups {
   width: 80%;
-  margin-left: 20%;
-  border-left: 2px dotted #D79922;
-  
-  
+   border-left: 2px dotted #D79922;
+    
 }
 .H1-CardItemCard{
   font-size:2rem;
@@ -53,9 +51,7 @@ code {
   background-color: #D79922;
   
 }
-.CardBody-Items{
-  border-bottom: solid 4px #D79922;
-}
+
 
 hr{
 	border-top: 2px dotted #D79922;;

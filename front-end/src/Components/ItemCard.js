@@ -11,9 +11,10 @@ import {
      Button,
     CardGroup
   } from "reactstrap";
-  import Styled from "styled-components";
+  
 
 function ItemCards (props) {
+  console.log(props)
   
  //Here im finding and then matching id coming from data vs ID coming from props.match.params.id so that  result gets saved on variable created named item, to then
  //pass the item down on my card with proper property.

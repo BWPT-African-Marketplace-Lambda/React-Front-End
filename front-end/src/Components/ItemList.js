@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import VerticalImage from "../images/vertical_image.png";
 import Search from './Search';
 
 
@@ -23,6 +24,24 @@ const BodyCard = styled.div`
   justify-content: space-around;
 `;
 
+const PageLayout =styled.div`
+display:flex;
+
+`;
+
+const ImgStyle = styled.img`
+width:100%;
+padding-right:1.5%;
+
+
+`;
+
+const ImgDiv = styled.div`
+width: 20%
+`;
+
+
+
 const ItemList = props => {
 
   const [savedProps, setSavedProps] = useState(props.savedData)
@@ -38,9 +57,48 @@ const scrollup =() => {
 };
 
   return (
-    <div>
-    <Search searchResultDisplay={searchResultDisplay}/>
+    <PageLayout>
+
+    <ImgDiv>
+    
+      <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+       <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+       <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+
+<ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+       <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+       <ImgStyle 
+      src={VerticalImage}
+      alt="vertical image"
+      
+      />
+      
+      
+     
+    </ImgDiv>
+    
     <CardGroup className="Styling-CardGroups">
+    <Search searchResultDisplay={searchResultDisplay}/>
         <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
       {savedProps &&
         savedProps.map(data => (
@@ -82,7 +140,7 @@ const scrollup =() => {
           </CardBody>
         ))}
     </CardGroup>
-    </div>
+    </PageLayout>
   );
 };
 export default ItemList;

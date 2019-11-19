@@ -56,6 +56,8 @@ function NavBar () {
 
     return (
         <div>
+
+                   
             <StyledNav>
                 <StyledImg src={logo} alt='logo'/>
                 <StyledRight>
