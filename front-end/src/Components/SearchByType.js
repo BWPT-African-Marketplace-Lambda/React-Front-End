@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
 function SearchByType () {
-    
+
     return(
         <form>
-            <Label>
+            <label>
                 <input
                     type='text'
                 
                 />
-            </Label>
+            </label>
         </form>
     )
 }
 
-export default SeachByType;
+export default SearchByType;
