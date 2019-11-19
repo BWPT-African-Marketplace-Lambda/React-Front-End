@@ -1,28 +1,23 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/login';
-import api from '../utils/api';
-import { reducer } from '../reducers/login';
-import { LOGIN_START, LOGIN_SUCCESS, LOGIN_ERROR } from '../actions/login';
+
 
 function Login(props) {
-    const [state, dispatch] = useReducer(reducer)
     const [user, setUser] = useState({
-        email:"",
-        password:""
+        email: "",
+        password: ""
     })
 
     const handleSubmit = event => {
         event.preventDefault()
-        dispatch({type: LOGIN_SUCCESS, payload: user || props.user })
-
-        api()
-            .post("/auth/login", state)
-            .then(res => {
-                console.log(state)
-            }).catch(err => {
-                console.log(err)
-            })
+        props.login(user)
+            // .then(() => {
+            //     // props.history.push("/userPageList")
+            //     console.log("Successful Login!")
+            // }).catch(err => {
+            //     console.log(err)
+            // })
     }
 
     const handleChange = event => {
@@ -34,7 +29,7 @@ function Login(props) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input 
+            <input
                 type='text'
                 name='email'
                 placeholder='Email'
@@ -42,7 +37,7 @@ function Login(props) {
                 onChange={handleChange}
             />
 
-            <input 
+            <input
                 type='text'
                 name='password'
                 placeholder='Password'
@@ -60,8 +55,8 @@ const mapStateToProps = state => {
     }
 }
 
-// const mapDispatchToProps = {
-//     login
-// }
+const mapDispatchToProps = {
+    login
+}
 
-export default connect(mapStateToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

@@ -15,7 +15,7 @@ export function login(credentials) {
       .post("/auth/login", credentials)
       .then(res => {
             // enter the "success" state
-            dispatch({ type: LOGIN_SUCCESS, payload: res.data.user })
+            dispatch({ type: LOGIN_SUCCESS, payload: res.data })
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("user_id", res.data.user.id);
             localStorage.setItem("userName", res.data.user.name);

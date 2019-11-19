@@ -28,7 +28,6 @@ const StyledEmpower = styled.p`
     font-style: italic;
 `;
 
-
 const StyledLinks = styled.div`
     background: #EFE2BA;
     display: flex;
@@ -37,7 +36,6 @@ const StyledLinks = styled.div`
     width: 50%;
     margin: 0 auto;
 `;
-
 
 const StyledP = styled.p`
     font-family: 'Calistoga', cursive;
