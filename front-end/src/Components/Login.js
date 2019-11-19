@@ -1,12 +1,8 @@
 import React, { useState, useReducer } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/login';
-import api from '../utils/api';
-import { reducer } from '../reducers/login';
-import { LOGIN_START, LOGIN_SUCCESS, LOGIN_ERROR } from '../actions/login';
 
 function Login(props) {
-    const [state, dispatch] = useReducer(reducer)
     const [user, setUser] = useState({
         email:"",
         password:""
@@ -14,15 +10,8 @@ function Login(props) {
 
     const handleSubmit = event => {
         event.preventDefault()
-        dispatch({type: LOGIN_SUCCESS, payload: user || props.user })
 
-        api()
-            .post("/auth/login", state)
-            .then(res => {
-                console.log(state)
-            }).catch(err => {
-                console.log(err)
-            })
+        props.login(user)
     }
 
     const handleChange = event => {
@@ -60,8 +49,8 @@ const mapStateToProps = state => {
     }
 }
 
-// const mapDispatchToProps = {
-//     login
-// }
+const mapDispatchToProps = {
+    login
+}
 
-export default connect(mapStateToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

@@ -5,7 +5,7 @@ export const getToken = () => {
 }
 
 export default function api() {
-    axios.create({
+    return axios.create({
         baseURL: "https://african-marketplace-bw.herokuapp.com/api",
         headers: {
             Authorization: getToken()
