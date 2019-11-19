@@ -18,12 +18,10 @@ export function login(credentials) {
             dispatch({ type: LOGIN_SUCCESS, payload: res.data })
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("user_id", res.data.user.id);
-            localStorage.setItem("userName", res.data.user.name);
-        
           })
       .catch(err => {
           // enter the "error" state
-          dispatch({ type: LOGIN_ERROR, payload: err.error })
+          dispatch({ type: LOGIN_ERROR, payload: err })
       })
     }
 }

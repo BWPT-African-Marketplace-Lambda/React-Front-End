@@ -21,15 +21,7 @@ function Signup(props) {
         event.preventDefault()
         //Add new user data to the api data base
         props.signup(user)
-        // console.log(props)
-        // props.signup(user)
-        //     .then(() => {
-        //         // props.history.push("/userPageList")
-        //         console.log("Successful Signup!")
-        //     })
-        //     .catch(err => {
-        //         console.log(err)
-        //     })
+        props.history.push("/userPageList")
     }
 
 

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/login';
 
-
 function Login(props) {
     const [user, setUser] = useState({
         email: "",
@@ -11,14 +10,9 @@ function Login(props) {
 
     const handleSubmit = event => {
         event.preventDefault()
+
         props.login(user)
-            props.history.push("/userPageList")
-            // .then(() => {
-            //     props.history.push("/userPageList")
-            //     // console.log("Successful Login!")
-            // }).catch(err => {
-            //     console.log(err)
-            // })
+        props.history.push("/userPageList")
     }
 
     const handleChange = event => {

@@ -66,6 +66,7 @@ function NavBar () {
                         <Link to='/'><StyledP>Home</StyledP></Link>
                         <Link to='/login'><StyledP>Log In</StyledP></Link>
                         <Link to='/signup'><StyledP>Sign Up</StyledP></Link>
+                        <Link to='/add-listing'><StyledP>Add Listing</StyledP></Link>
                     </StyledLinks>
                 </StyledRight>
             </StyledNav>
