@@ -23,7 +23,7 @@ const ItemsData = () => {
       .get("https://african-marketplace-bw.herokuapp.com/api/items")
       .then(res => {
         setData(res.data);
-       
+
       })
       .catch(err => {
         console.log(err);

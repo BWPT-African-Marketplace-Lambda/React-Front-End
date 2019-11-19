@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import VerticalImage from "../images/vertical_image.png";
 import Search from './Search';
-
+import SearchByPrice from "./SearchByPrice";
 
 import {
   CardFooter,
@@ -10,13 +10,14 @@ import {
   CardBody,
   CardHeader,
   CardTitle,
-   Button,
+  Button,
   CardGroup
 } from "reactstrap";
 
 import styled from "styled-components";
 import {Link,Route} from "react-router-dom";
 import ItemCard from "./ItemCard"
+
 
 
 const BodyCard = styled.div`
@@ -26,14 +27,11 @@ const BodyCard = styled.div`
 
 const PageLayout =styled.div`
 display:flex;
-
 `;
 
 const ImgStyle = styled.img`
 width:100%;
 padding-right:1.5%;
-
-
 `;
 
 const ImgDiv = styled.div`
@@ -41,7 +39,6 @@ width: 20%
 `;
 
 const ItemList = props => {
-
   const [savedProps, setSavedProps] = useState(props.savedData)
 
 /* //Since i have itemList and ItemCard rendering together on same page through App.js */
@@ -54,52 +51,27 @@ const ItemList = props => {
     setSavedProps(results);
 };
 
+const searchByPriceDisplay = input => {
+    const res = savedProps.filter(obj=>obj.price <= input);
+    setSavedProps(res);
+};
+
 return (
     <PageLayout>
-
-    <ImgDiv>
-    
-      <ImgStyle 
-      src={VerticalImage}
-      alt="vertical image"
-      
-      />
-       <ImgStyle 
-      src={VerticalImage}
-      alt="vertical image"
-      
-      />
-       <ImgStyle 
-      src={VerticalImage}
-      alt="vertical image"
-      
-      />
-
-<ImgStyle 
-      src={VerticalImage}
-      alt="vertical image"
-      
-      />
-       <ImgStyle 
-      src={VerticalImage}
-      alt="vertical image"
-      
-      />
-       <ImgStyle 
-      src={VerticalImage}
-      alt="vertical image"
-      
-      />
-      
-      
-     
-    </ImgDiv>
+      <ImgDiv>
+        <ImgStyle src={VerticalImage} alt="vertical image"/>
+        <ImgStyle src={VerticalImage} alt="vertical image"/>
+        <ImgStyle src={VerticalImage} alt="vertical image"/>
+        <ImgStyle src={VerticalImage} alt="vertical image"/>
+        <ImgStyle src={VerticalImage} alt="vertical image"/>
+        <ImgStyle src={VerticalImage} alt="vertical image"/>
+      </ImgDiv>
     
     <CardGroup className="Styling-CardGroups">
-    <Search searchResultDisplay={searchResultDisplay}/>
-        <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
-      {savedProps &&
-        savedProps.map(data => (
+      <Search searchResultDisplay={searchResultDisplay}/>
+      <SearchByPrice searchByPriceDisplay={searchByPriceDisplay} />
+      <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
+      {savedProps && savedProps.map(data => (
           <CardBody key={data.id} className="CardBody-Items" >
             <CardHeader className="CardHeader-Items">
               <CardTitle>
@@ -131,14 +103,13 @@ return (
                       
             </BodyCard>
             <CardFooter className="Footer-Buttons">
-               {/* Here on this onClick im passing the function scrollup so that when clicked page moves up to see new product created on (ItemCard 
-                                              component) */}
+{/* Here on this onClick im passing the function scrollup so that when clicked page moves up to see new product created on (ItemCard component) */}
           <Link to={`/ItemList/${data.id}`}> <Button onClick={scrollup}className="Items-Buttons">Check this item out!</Button> </Link>
             </CardFooter>  
           </CardBody>
         ))}
     </CardGroup>
-    </PageLayout>
-  );
+  </PageLayout>
+);
 };
 export default ItemList;
