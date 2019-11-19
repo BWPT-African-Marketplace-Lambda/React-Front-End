@@ -11,7 +11,7 @@ export function fetchUserInfo() {
     api()
       .get(`/users/${localStorage.getItem("user_id")}`)
       .then(res => {
-        dispatch({ type: FETCH_USER_ITEMS_SUCCESS, payload: res.data.user.items });
+        dispatch({ type: FETCH_USER_ITEMS_SUCCESS, payload: res.data.user });
       })
       .catch(err => {
         dispatch({ type: FETCH_USER_ITEMS_ERROR, payload: err.error })
