@@ -1,24 +1,28 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import ItemsData from "./Components/ItemsData";
-import Login from './Components/Login';
-import SignUp from './Components/Signup';
 import './App.css';
-
+import Login from "./Components/Login"
+import Signup from "./Components/Signup"
+import UserPageList from "./Components/userPage";
+import AddListing from './Components/AddListing';
+import ProtectedRoute from './Components/ProtectedRoute';
+import { getToken } from './utils/api';
 
 function App() {
+const loggedIn = getToken()
+
   return (
     <div className="App">
-      <SignUp />
-      <Login />
-
+      <ProtectedRoute path="/add-listing" component={AddListing} />
       <Route path='/' component={NavBar}/>
-       <ItemsData/>
-      
-       
+      <Route path="/login" component={Login}/>
+      <Route path="/signup" component={Signup}/>
+      <Route exact path="/" component={ItemsData}/>
+      <ProtectedRoute path="/userPageList" component={UserPageList}/>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);

@@ -1,17 +1,18 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/login';
 
 function Login(props) {
     const [user, setUser] = useState({
-        email:"",
-        password:""
+        email: "",
+        password: ""
     })
 
     const handleSubmit = event => {
         event.preventDefault()
 
         props.login(user)
+        props.history.push("/userPageList")
     }
 
     const handleChange = event => {
@@ -23,7 +24,7 @@ function Login(props) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input 
+            <input
                 type='text'
                 name='email'
                 placeholder='Email'
@@ -31,7 +32,7 @@ function Login(props) {
                 onChange={handleChange}
             />
 
-            <input 
+            <input
                 type='text'
                 name='password'
                 placeholder='Password'

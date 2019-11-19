@@ -1,7 +1,6 @@
 import {
   SIGNUP_START,
   SIGNUP_SUCCESS,
-  SIGHUP_ERROR,
   SIGNUP_ERROR
 } from "../actions/sighup";
 

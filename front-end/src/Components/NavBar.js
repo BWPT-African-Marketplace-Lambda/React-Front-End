@@ -28,7 +28,6 @@ const StyledEmpower = styled.p`
     font-style: italic;
 `;
 
-
 const StyledLinks = styled.div`
     background: #EFE2BA;
     display: flex;
@@ -37,7 +36,6 @@ const StyledLinks = styled.div`
     width: 50%;
     margin: 0 auto;
 `;
-
 
 const StyledP = styled.p`
     font-family: 'Calistoga', cursive;
@@ -64,8 +62,9 @@ function NavBar () {
                     <StyledEmpower>empowering small business owners</StyledEmpower>
                     <StyledLinks>
                         <Link to='/'><StyledP>Home</StyledP></Link>
-                        <Link to='/'><StyledP>Log In</StyledP></Link>
-                        <Link to='/'><StyledP>Sign Up</StyledP></Link>
+                        <Link to='/login'><StyledP>Log In</StyledP></Link>
+                        <Link to='/signup'><StyledP>Sign Up</StyledP></Link>
+                        <Link to='/add-listing'><StyledP>Add Listing</StyledP></Link>
                     </StyledLinks>
                 </StyledRight>
             </StyledNav>
