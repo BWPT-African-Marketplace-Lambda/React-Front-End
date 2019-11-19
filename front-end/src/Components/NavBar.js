@@ -37,7 +37,6 @@ const StyledLinks = styled.div`
     margin: 0 auto;
 `;
 
-
 const StyledP = styled.p`
     font-family: 'Calistoga', cursive;
     font-size: 1.2rem;
