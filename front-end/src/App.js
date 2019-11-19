@@ -14,7 +14,7 @@ function App() {
       <Route path='/' component={NavBar}/>
       <Route path="/login" component={Login}/>
       <Route path="/signup" component={Signup}/>
-      <Route exact path="/" component={ItemsData}/>
+      <Route path="/" component={ItemsData}/>
       <Route path="/userPageList" component={UserPageList}/>
     </div>
   );
