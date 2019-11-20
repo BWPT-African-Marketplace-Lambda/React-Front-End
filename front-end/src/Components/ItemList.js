@@ -56,7 +56,7 @@ const searchByPriceDisplay = input => {
     setSavedProps(res);
 };
 
-return (
+  return (
     <PageLayout>
       <ImgDiv>
         <ImgStyle src={VerticalImage} alt="vertical image"/>
@@ -67,7 +67,7 @@ return (
         <ImgStyle src={VerticalImage} alt="vertical image"/>
       </ImgDiv>
     
-    <CardGroup className="Styling-CardGroups">
+      <CardGroup className="Styling-CardGroups">
       <Search searchResultDisplay={searchResultDisplay}/>
       <SearchByPrice searchByPriceDisplay={searchByPriceDisplay} />
       <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } /> 
@@ -108,8 +108,8 @@ return (
             </CardFooter>  
           </CardBody>
         ))}
-    </CardGroup>
-  </PageLayout>
-);
+          </CardGroup>
+    </PageLayout>
+  );
 };
 export default ItemList;
