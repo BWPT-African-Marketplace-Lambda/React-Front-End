@@ -1,14 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addItem } from "../actions/addItem"
+import { addItem } from "../actions/addItem";
+import styled from 'styled-components';
+import '../index.css';
 
 function AddListing(props) {
+  const StyledH1 = styled.h1`
+  font-size: 2.5rem; font-weight: 300; color: #ffcc66; margin: 0 0 24px;
+`;
+
+const StyledDiv = styled.div`
+  padding: 5%;
+`;
+
+const StyledStrong = styled.strong`
+  color: #7c795d; font-family: 'Trocchi', serif; font-size: 5rem; font-weight: normal; line-height: 48px; margin: 0;
+`;
+
   const getUserId = localStorage.getItem("user_id")
   const [item, setItem] = useState({
     name:"",
     city:"",
     country:"",
     price: [],
+    description:"",
     user_id: getUserId
   })
 
@@ -30,37 +45,55 @@ function AddListing(props) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={item.name}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="city"
-          placeholder="City"
-          value={item.city}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="country"
-          placeholder="Country"
-          value={item.country}
-          onChange={handleChange}
-        />
-        <input
-          type="number"
-          name="price"
-          placeholder="Price"
-          value={item.price}
-          onChange={handleChange}
-        />
-        <button type="submit">Add Item</button>
-      </form>
+      <StyledDiv>
+          <StyledH1><StyledStrong>Saudi Africa</StyledStrong> <br></br> Product Marketplace </StyledH1>
+          <hr></hr>
+      </StyledDiv>
+      <div className='form-container'>
+        <form className='form-style' onSubmit={handleSubmit}>
+          <input
+            className='input-style'
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={item.name}
+            onChange={handleChange}
+          />
+          <input
+            className='input-style'
+            type="text"
+            name="city"
+            placeholder="City"
+            value={item.city}
+            onChange={handleChange}
+          />
+          <input
+            className='input-style'
+            type="text"
+            name="country"
+            placeholder="Country"
+            value={item.country}
+            onChange={handleChange}
+          />
+          <input
+            className='input-style'
+            type="number"
+            name="price"
+            placeholder="Price"
+            value={item.price}
+            onChange={handleChange}
+          />
+          <input
+            className='input-style'
+            type="text"
+            name="description"
+            placeholder="Description"
+            value={item.description}
+            onChange={handleChange}
+          />
+          <button className='form-button-style' type="submit">Add Item</button>
+        </form>
+      </div>
     </div>
   )
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../images/Saudi_Logo.png';
+import { getToken } from '../utils/api';
+import { logout } from './logout';
 
 const StyledNav = styled.div`
     background: #D79922;
@@ -53,20 +55,19 @@ const StyledP = styled.p`
 `;
 
 function NavBar () {
-
+    const loggedOn = getToken()
     return (
-        <div>
-
-                   
+        <div>       
             <StyledNav>
                 <StyledImg src={logo} alt='logo'/>
                 <StyledRight>
                     <StyledEmpower>empowering small business owners</StyledEmpower>
                     <StyledLinks>
                         <Link to='/'><StyledP>Home</StyledP></Link>
-                        <Link to='/login'><StyledP>Log In</StyledP></Link>
-                        <Link to='/signup'><StyledP>Sign Up</StyledP></Link>
-                        <Link to='/add-listing'><StyledP>Add Listing</StyledP></Link>
+                        {!loggedOn && <Link to='/login'><StyledP>Log In</StyledP></Link>}
+                        {!loggedOn && <Link to='/signup'><StyledP>Sign Up</StyledP></Link>}
+                        {loggedOn && <Link to='/userPageList'><StyledP>My List</StyledP></Link>}
+                        {loggedOn && <Link to='/'><StyledP onClick={logout}>Logout</StyledP></Link>}
                     </StyledLinks>
                 </StyledRight>
             </StyledNav>
