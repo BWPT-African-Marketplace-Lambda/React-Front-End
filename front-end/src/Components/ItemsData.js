@@ -23,7 +23,6 @@ const ItemsData = () => {
     axios
       .get("https://african-marketplace-bw.herokuapp.com/api/items")
       .then(res => {
-        setData(res.data);
         setIsLoading(false)
 
       })

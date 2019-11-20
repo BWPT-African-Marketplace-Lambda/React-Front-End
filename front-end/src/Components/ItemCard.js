@@ -13,6 +13,12 @@ import {
   CardGroup
 } from "reactstrap";
 
+
+function ItemCards (props) {
+  console.log(props);
+ //Here im finding and then matching id coming from data vs ID coming from props.match.params.id so that  result gets saved on variable created named item, to then
+ //pass the item down on my card with proper property.
+
 const SDiv = styled.div`
   margin: 10px 2.5px;
   border: 1px solid black;
@@ -34,6 +40,7 @@ const IDiv = styled.div`
 function ItemCards(props) {
   const [toggle, setToggle] = useState(true);
   console.log(props)
+
 
   const toggleOpen = () => {
     setToggle(!toggle)
