@@ -43,7 +43,7 @@ height: 500px;
 const ItemList = props => {
 
   const [savedProps, setSavedProps] = useState(props.savedData)
-
+  console.log(props);
 /* //Since i have itemList and ItemCard rendering together on same page through App.js */
 /* //ill create this function so that when you click the "check this item out!" it would take customer to the item they are trying to purchase. */
   const scrollup =() => {
@@ -105,7 +105,7 @@ const searchByPriceDisplay = input => {
         {props.isLoading ? (
           <h3>...Loading</h3>
         ) : (
-          props.savedData.map(data => (
+          props.savedData && props.savedData.map(data => (
             <ItemCard
               key={data.id}
               item={data} />

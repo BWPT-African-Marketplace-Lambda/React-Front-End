@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {NavLink } from "react-router-dom";
 
 import {
@@ -17,39 +17,42 @@ function ItemCards (props) {
   console.log(props);
  //Here im finding and then matching id coming from data vs ID coming from props.match.params.id so that  result gets saved on variable created named item, to then
  //pass the item down on my card with proper property.
-const item = props.savedProps && props.savedProps.find( dataItem => `${dataItem.id}` === props.match.params.id);
+//const item = props.savedProps && props.savedProps.find( dataItem => `${dataItem.id}` === props.match.params.id);
+
+
+  const [toggle, setToggle] =useState(true);
+
+  function toggleOpen () {
+    setToggle(!toggle);
+  };
 
 return (
   <div>
-   
-    <NavLink to="/"> <Button className="Items-Buttons">Back To All Products</Button> </NavLink>
-  
-
     <CardGroup className="Styling-CardGroups">
     
         <CardBody >
           <CardHeader className="CardHeader-Items" >
             <CardTitle className="H1-CardItemCard">
-              <strong>{item.name}</strong>
+              <strong>{props.item.name}</strong>
             </CardTitle>
           </CardHeader>
           <div>
             <CardImg
               src={"https://assets.weforum.org/article/image/large_bBsjfn2r-_U89L3OjVWcck849EoScbK0eI4qw1c0O5w.jpg"}
-              alt={item.alt}
+              alt={props.item.alt}
             />
             <div>
               <CardText>
                 <strong>Title:</strong>
-                {` ${item.name}`}
+                {` ${props.item.name}`}
               </CardText>
               <CardText>
                 <strong>Price:</strong>
-                {` $${item.price}`}
+                {` $${props.item.price}`}
               </CardText>
               <CardText>
                 <strong>Description:</strong>
-                {` ${item.description}`}
+                {` ${props.item.description}`}
               </CardText>
             </div>
           </div>
@@ -60,7 +63,7 @@ return (
         </CardBody>
         
   </CardGroup>
-  <h4>{`Customers that bought "${item.name}", Frequently bought together the following items:`}</h4>
+  <h4>{`Customers that bought "${props.item.name}", Frequently bought together the following items:`}</h4>
   </div>
   
   );
