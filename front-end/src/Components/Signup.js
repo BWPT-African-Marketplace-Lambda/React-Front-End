@@ -33,12 +33,13 @@ function Signup(props) {
     const handleSubmit = event => {
         event.preventDefault()
         //Add new user data to the api data base
-      
         props.signup(user)
         props.history.push("/userPageList")
     }
 
+
     return (
+
         <div>
             <StyledDiv>
                 <StyledH1><StyledStrong>Saudi Africa</StyledStrong> <br></br> Product Marketplace </StyledH1>

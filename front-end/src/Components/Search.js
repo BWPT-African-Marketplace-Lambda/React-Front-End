@@ -17,7 +17,7 @@ function Search (props) {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="search" onSubmit={handleSubmit}>
             <label>
                 Search by Product Name: 
                 &nbsp;

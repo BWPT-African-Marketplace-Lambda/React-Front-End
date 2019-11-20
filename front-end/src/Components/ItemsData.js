@@ -5,7 +5,8 @@ import styled from "styled-components";
 
 
 const ItemsData = () => {
-  const [data, setData] = useState("");
+  const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true)
   const StyledH1 = styled.h1`
     
    
@@ -22,24 +23,28 @@ const ItemsData = () => {
     axios
       .get("https://african-marketplace-bw.herokuapp.com/api/items")
       .then(res => {
-        setData(res.data);
-       
+        setIsLoading(false)
+
       })
       .catch(err => {
         console.log(err);
+        setIsLoading(false)
       });
   }, []);
 
-  const savedData = data;
+  // const savedData = data;
 
   return (
     <StyledDiv>
       <StyledH1><StyledStrong>Saudi Africa</StyledStrong> <br></br> Product Marketplace </StyledH1>
       <hr></hr>
-      
-      <ItemList savedData={savedData} />
-      
-      </StyledDiv>
+
+      <ItemList
+        savedData={data}
+        setData={setData}
+        isLoading={isLoading} />
+
+    </StyledDiv>
   );
 };
 export default ItemsData;

@@ -18,8 +18,13 @@ code {
   border-radius: 80%;
 }
 .Styling-CardGroups {
-  width: 80%;
-   border-left: 2px dotted #D79922;
+  width: 100%;
+   /* border-left: 2px dotted #D79922; */
+   display: flex;
+   flex-flow: column wrap;
+   /* justify-content: center; */
+   margin-top: 50px;
+
     
 }
 .H1-CardItemCard{
@@ -48,8 +53,7 @@ code {
 }
 .BodyCard-items{
   padding:3%;
-  background-color: #D79922;
-  
+  background-color: #D79922;  
 }
 
 

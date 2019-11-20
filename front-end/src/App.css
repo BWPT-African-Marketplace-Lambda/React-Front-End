@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #f0f0f0;
+    margin: 0 auto;
+}
+
+
 .App {
   text-align: center;
 }
@@ -26,7 +37,7 @@ main {
   /* min-height: 40vh; */
   max-width: 500px;
   margin: 90px auto;
-  background: white;
+  background: #D79922;
   padding: 15px;
   box-shadow: 0 19px 10px rgba(51, 51, 51, 0.12);
 }
@@ -36,4 +47,28 @@ main {
   background: white;
   padding: 15px;
   box-shadow: 0 19px 10px rgba(51, 51, 51, 0.12);
+}
+
+.hidden {
+ display: none
+}
+.show {
+  display: block;
+}
+
+.itemCard {
+  width: 550px;
+  /* height: 235px; */
+  height: 520px;
+  border-radius: 5px;
+  box-shadow: 0 19px 10px rgba(51, 51, 51, 0.12);
+  background-color: #ffffff;
+  z-index: 2;
+  position: relative;
+  margin-left: 300px;
+}
+
+.search{
+  justify-content: center;
+  /* margin-left: -80 */
 }
