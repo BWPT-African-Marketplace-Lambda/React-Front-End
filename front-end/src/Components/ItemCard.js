@@ -37,7 +37,7 @@ const IDiv = styled.div`
 `;
 
 
-function ItemCards(props) {
+
   const [toggle, setToggle] = useState(true);
   console.log(props)
 

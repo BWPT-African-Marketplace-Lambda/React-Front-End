@@ -42,6 +42,8 @@ height: 500px;
 
 const ItemList = props => {
 
+  console.log(props)
+
   const [savedProps, setSavedProps] = useState(props.savedData)
 
 /* //Since i have itemList and ItemCard rendering together on same page through App.js */
@@ -84,7 +86,7 @@ const searchByPriceDisplay = input => {
 //   const searchResultDisplay = search => {
 //     const results = props.savedData.filter(datum => datum.name.toLowerCase().includes(search.toLowerCase()));
 //     props.setData(results);
-//   };
+//
 
   return (
     <PageLayout>
@@ -132,7 +134,7 @@ const searchByPriceDisplay = input => {
         {props.isLoading ? (
           <h3>...Loading</h3>
         ) : (
-          props.savedData.map(data => (
+          savedProps && savedProps.map(data => (
             <ItemCard
               key={data.id}
               item={data} />

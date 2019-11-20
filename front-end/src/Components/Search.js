@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 function Search (props) {
-
+console.log(props)
     const [query, setQuery]=useState('');
 
     const handleChangeSearch = event => {
