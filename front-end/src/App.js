@@ -19,7 +19,7 @@ const loggedIn = getToken()
       <Route path='/' component={NavBar}/>
       <Route path="/login" component={Login}/>
       <Route path="/signup" component={Signup}/>
-      <Route path="/" component={ItemsData}/>
+      <Route exact path="/" component={ItemsData}/>
       <ProtectedRoute path="/userPageList" component={UserPageList}/>
     </div>
   );
