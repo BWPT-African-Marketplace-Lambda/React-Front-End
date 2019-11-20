@@ -7,9 +7,9 @@ import styled from "styled-components";
 const ItemsData = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true)
+console.log(data)
+
   const StyledH1 = styled.h1`
-    
-   
     font-size: 2.5rem; font-weight: 300; color: #ffcc66; margin: 0 0 24px;
   `;
   const StyledDiv = styled.div`
@@ -25,6 +25,8 @@ const ItemsData = () => {
       .then(res => {
         setIsLoading(false)
         setData(res.data)
+        console.log(res.data)
+
       })
       .catch(err => {
         console.log(err);

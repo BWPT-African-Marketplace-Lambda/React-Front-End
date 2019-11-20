@@ -79,3 +79,28 @@ hr:after {
   
 }
 /* ItemCard ItemList & ItemsData styling starts ENDS here */
+.form-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-style {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.input-style {
+  margin: 10px 0;
+  border-radius: 20px;
+  color: #7c795d;
+  background-color: #EFE2BA;
+}
+
+.form-button-style {
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 20px;
+  background: #D79922;
+}

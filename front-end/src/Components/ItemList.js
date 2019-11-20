@@ -3,6 +3,8 @@ import VerticalImage from "../images/vertical_image.png";
 import Search from './Search';
 import SearchByPrice from "./SearchByPrice";
 
+
+
 import {
   // CardFooter,
   // CardImg,
@@ -43,15 +45,15 @@ height: 500px;
 const ItemList = props => {
 
   const [savedProps, setSavedProps] = useState(props.savedData)
-  console.log(props);
+  console.log(props)
 /* //Since i have itemList and ItemCard rendering together on same page through App.js */
 /* //ill create this function so that when you click the "check this item out!" it would take customer to the item they are trying to purchase. */
-  const scrollup =() => {
-    window.scrollTo(0, 0);
-};
+
   const searchResultDisplay = search => {
     const results = savedProps.filter(datum=>datum.name.toLowerCase().includes(search.toLowerCase()));
     setSavedProps(results);
+    console.log("SavedProps", savedProps)
+
 };
 
 const searchByPriceDisplay = input => {
@@ -105,7 +107,7 @@ const searchByPriceDisplay = input => {
         {props.isLoading ? (
           <h3>...Loading</h3>
         ) : (
-          props.savedData && props.savedData.map(data => (
+            savedProps && savedProps.map(data => (
             <ItemCard
               key={data.id}
               item={data} />
