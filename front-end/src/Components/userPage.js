@@ -6,10 +6,12 @@ import { updateUserBio } from "../actions/updateUserBio"
 import UserCard from "./UserCard"
 import styled from "styled-components";
 import defaultAvatar from "../images/default-avatar.png"
+import AddListing from "./AddListing"
 import UserItem from "./UserItem"
 
 function UserPage(props) {
   const [defaultImg, setDefaultImg] = useState("")
+  // const [items, setItems] = useState([])
 
 
   const StyledH1 = styled.h1`
@@ -24,10 +26,17 @@ function UserPage(props) {
   color: #7c795d; font-family: 'Trocchi', serif; font-size: 5rem; font-weight: normal; line-height: 48px; margin: 0;
   `;
 
+  const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  `
+
   useEffect(() => {
     props.fetchUserInfo()
     props.fetchItems()
     setDefaultImg(defaultAvatar)
+    console.log("This One", props.items)
   }, [])
 
   return (
@@ -44,20 +53,23 @@ function UserPage(props) {
               </StyledH1>
               <hr></hr>
             </StyledDiv>
-      
-            <UserCard
-              userBio={props.userBio}
-              updateUserBio={props.updateUserBio}
-              userInfo={props.userInfo}
-              defaultImg={defaultImg}
-              setDefaultImg={setDefaultImg}
-            />
+
+            <Section>
+              <UserCard
+                userBio={props.userBio}
+                updateUserBio={props.updateUserBio}
+                userInfo={props.userInfo}
+                defaultImg={defaultImg}
+                setDefaultImg={setDefaultImg}
+              />
+
+              <AddListing />
+            </Section>
 
 
-
-            {/* {props.userBio.items.map((item, index) => (
-          <UserItem userItem={item} key={index} />
-            ))} */}
+            {props.items.map((item, index) => (
+              <UserItem item={item} key={index} />
+            ))}
           </div>
         )}
     </>
@@ -69,7 +81,8 @@ function mapStateToProps(state) {
     userInfo: state.userInfo.fetchUserItems,
     isInfoLoading: state.user.isLoading,
     userInfoError: state.user.error,
-    userBio: state.userBio.userBio
+    userBio: state.userBio.userBio,
+    items: state.items.items
   }
 }
 

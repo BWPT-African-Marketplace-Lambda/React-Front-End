@@ -45,10 +45,6 @@ const StyledStrong = styled.strong`
 
   return (
     <div>
-      <StyledDiv>
-          <StyledH1><StyledStrong>Saudi Africa</StyledStrong> <br></br> Product Marketplace </StyledH1>
-          <hr></hr>
-      </StyledDiv>
       <div className='form-container'>
         <form className='form-style' onSubmit={handleSubmit}>
           <input
@@ -85,7 +81,7 @@ const StyledStrong = styled.strong`
           />
           <input
             className='input-style'
-            type="text"
+            type="textarea"
             name="description"
             placeholder="Description"
             value={item.description}
