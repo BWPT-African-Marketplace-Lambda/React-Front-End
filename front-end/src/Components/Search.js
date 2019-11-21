@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 
 function Search (props) {
@@ -15,9 +16,15 @@ function Search (props) {
         setQuery('');
     };
 
+    const Form = styled.form`
+        color: black; 
+        font-family: 'Trocchi', serif;
+        letter-spacing: 2px;
+    `;
+
 
     return (
-        <form className="search" onSubmit={handleSubmit}>
+        <Form className="search" onSubmit={handleSubmit}>
             <label>
                 Search by Product Name: 
                 &nbsp;
@@ -29,7 +36,7 @@ function Search (props) {
                     placeholder='type product name'
                 />
             </label>
-        </form>
+        </Form>
     );
 };
 
