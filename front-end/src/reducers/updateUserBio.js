@@ -1,3 +1,5 @@
+import  defaultAvatar from "../images/default-avatar.png"
+
 
 import {
   UPDATE_USER_BIO_START,
@@ -6,7 +8,12 @@ import {
 } from "../actions/updateUserBio"
 
 const initialState = {
-  userBio: {},
+  userBio: {
+    avatar_url: defaultAvatar,
+    about: "Add your about information",
+    email: "Update your email",
+    username: "Update your username"
+  },
   isLoading: false,
   error: null
 };
