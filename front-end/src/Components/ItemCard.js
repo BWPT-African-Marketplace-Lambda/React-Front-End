@@ -97,7 +97,7 @@ function ItemCards(props) {
           </CardBody>
         </CardGroup>
       </SDiv>
-    </div >
+    </div>
 
   );
 }
