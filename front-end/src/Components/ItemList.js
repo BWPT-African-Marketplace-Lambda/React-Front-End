@@ -61,12 +61,6 @@ const searchByPriceDisplay = input => {
     setSavedProps(res);
 };
 
-
-    
-{/* Here on this onClick im passing the function scrollup so that when clicked page moves up to see new product created on (ItemCard component) */}
-
-
-
   return (
     <PageLayout>
       <main>
@@ -108,8 +102,7 @@ const searchByPriceDisplay = input => {
 
       <CardGroup className="Styling-CardGroups">
         <Search searchResultDisplay={searchResultDisplay} />
-        <SearchByPrice searchByPriceDisplay={searchByPriceDisplay} />
-
+        <SearchByPrice searchByPriceDisplay={searchByPriceDisplay}/>
         {/* <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } />  */}
         {props.isLoading ? (
           <h3>...Loading</h3>

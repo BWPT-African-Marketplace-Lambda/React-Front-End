@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components"
+import {NavLink } from "react-router-dom";
+import styled from 'styled-components';
 
 import {
-  CardFooter,
-  CardImg,
-  CardText,
-  CardBody,
-  CardHeader,
-  CardTitle,
-  Button,
-  CardGroup
-} from "reactstrap";
-
+   CardFooter,
+    CardImg,
+    CardText,
+    CardBody,
+    CardHeader,
+    CardTitle,
+     Button,
+    CardGroup
+  } from "reactstrap";
+  
 
 
 //Here im finding and then matching id coming from data vs ID coming from props.match.params.id so that  result gets saved on variable created named item, to then
@@ -50,9 +50,7 @@ function ItemCards(props) {
 
   return (
     <div>
-
       {/* <NavLink to="/"> <Button className="Items-Buttons">Back To All Products</Button> </NavLink> */}
-
       <SDiv className={toggle ? "itemCard" : ""} onClick={toggleOpen}>
         <CardGroup className="Styling-CardGroups">
           <CardBody >
@@ -80,7 +78,6 @@ function ItemCards(props) {
                 </CardText>
               </IDiv>
             </div>
-
             <IDiv className={toggle ? "hidden" : "show"}>
               <CardText>
                 <strong>City:</strong>
@@ -102,14 +99,10 @@ function ItemCards(props) {
                 <Button className="Items-Buttons">Buy Now!</Button>
               </CardFooter>
             </IDiv>
-
           </CardBody>
         </CardGroup>
       </SDiv>
-      {/* <h4>{`Customers that bought "${props.item.name}", Frequently bought together the following items:`}</h4> */}
     </div>
-
   );
 }
-
 export default ItemCards
