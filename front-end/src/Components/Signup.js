@@ -34,7 +34,10 @@ function Signup(props) {
         event.preventDefault()
         //Add new user data to the api data base
         props.signup(user)
-        props.history.push("/userPageList")
+        setTimeout(() => {
+            props.history.push("/userPageList")
+        })
+        
     }
 
 

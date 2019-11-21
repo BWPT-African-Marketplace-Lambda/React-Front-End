@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from "react-redux"
 import { fetchUserInfo } from "../actions/userItems"
 import { fetchItems } from "../actions/fetchItems"
 import { updateUserBio } from "../actions/updateUserBio"
 import UserCard from "./UserCard"
 import styled from "styled-components";
+import defaultAvatar from "../images/default-avatar.png"
+import UserItem from "./UserItem"
 
 function UserPage(props) {
+  const [defaultImg, setDefaultImg] = useState("")
+
 
   const StyledH1 = styled.h1`
     font-size: 2.5rem; font-weight: 300; color: #ffcc66; margin: 0 0 24px;
@@ -21,9 +25,9 @@ function UserPage(props) {
   `;
 
   useEffect(() => {
-    // props.fetchUserInfo()
+    props.fetchUserInfo()
     props.fetchItems()
-
+    setDefaultImg(defaultAvatar)
   }, [])
 
   return (
@@ -34,22 +38,24 @@ function UserPage(props) {
         <h1>Loading...</h1>
       ) : (
           <div>
-            <UserCard 
-            userInfo={props.userInfo}
-            userBio={props.userBio}
-            updateUserBio={props.updateUserBio}
-            />
-
             <StyledDiv>
               <StyledH1>
-                <StyledStrong>Saudi Africa</StyledStrong>
-                <br/>
-                 Make a New Listing to the Product Market
+                Welcome to your personal Account
               </StyledH1>
               <hr></hr>
             </StyledDiv>
-            <h1>My Items</h1>
-            {/* {props.userInfo.items.map((item, index) => (
+      
+            <UserCard
+              userBio={props.userBio}
+              updateUserBio={props.updateUserBio}
+              userInfo={props.userInfo}
+              defaultImg={defaultImg}
+              setDefaultImg={setDefaultImg}
+            />
+
+
+
+            {/* {props.userBio.items.map((item, index) => (
           <UserItem userItem={item} key={index} />
             ))} */}
           </div>
@@ -60,7 +66,7 @@ function UserPage(props) {
 
 function mapStateToProps(state) {
   return {
-    userInfo: state.userInfo.user,
+    userInfo: state.userInfo.fetchUserItems,
     isInfoLoading: state.user.isLoading,
     userInfoError: state.user.error,
     userBio: state.userBio.userBio

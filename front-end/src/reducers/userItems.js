@@ -1,3 +1,5 @@
+import  defaultAvatar from "../images/default-avatar.png"
+
 import {
   FETCH_USER_ITEMS_START,
   FETCH_USER_ITEMS_SUCCESS,
@@ -5,7 +7,12 @@ import {
 } from "../actions/userItems";
 
 const initialState = {
-  fetchUserItems: [],
+  fetchUserItems: {
+    avatar_url: defaultAvatar,
+    about: "Add your about information",
+    email: "Update your email",
+    username: "Update your username"
+  },
   isLoading: false,
   error: null
 };
