@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components"
+import {NavLink } from "react-router-dom";
+import styled from 'styled-components';
 
 import {
-  CardFooter,
-  CardImg,
-  CardText,
-  CardBody,
-  CardHeader,
-  CardTitle,
-  Button,
-  CardGroup
-} from "reactstrap";
-
+   CardFooter,
+    CardImg,
+    CardText,
+    CardBody,
+    CardHeader,
+    CardTitle,
+     Button,
+    CardGroup
+  } from "reactstrap";
+  
 
 const SDiv = styled.div`
   margin: 10px 2.5px;
@@ -42,7 +42,6 @@ function ItemCards(props) {
 
   return (
     <div>
-
       <SDiv className={toggle ? "itemCard" : ""} onClick={toggleOpen}>
         <CardGroup className="Styling-CardGroups">
           <CardBody >
@@ -72,7 +71,6 @@ function ItemCards(props) {
               </IDiv>
               
             </div>
-
             <IDiv className={toggle ? "hidden" : "show"}>
               <CardText>
                 <strong>City:</strong>
@@ -93,13 +91,10 @@ function ItemCards(props) {
                 < NavLink to="/signup"> <Button className="Items-Buttons">Sign up for more info!</Button> </NavLink> 
               </CardFooter>
             </IDiv>
-
           </CardBody>
         </CardGroup>
       </SDiv>
-    </div >
-
+</div>
   );
 }
-
 export default ItemCards

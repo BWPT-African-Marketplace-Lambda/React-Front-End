@@ -45,7 +45,6 @@ const searchByPriceDisplay = input => {
     setSavedProps(res);
 };
 
-
   return (
     <PageLayout>
       <main>
@@ -113,8 +112,7 @@ const searchByPriceDisplay = input => {
 
          <CardGroup className="Styling-CardGroups">
         <Search searchResultDisplay={searchResultDisplay} />
-        <SearchByPrice searchByPriceDisplay={searchByPriceDisplay} />
-
+        <SearchByPrice searchByPriceDisplay={searchByPriceDisplay}/>
         {/* <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } />  */}
         {props.isLoading ? (
           <h3>...Loading</h3>
