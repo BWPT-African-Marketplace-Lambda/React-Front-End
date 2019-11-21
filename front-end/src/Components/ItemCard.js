@@ -26,7 +26,7 @@ const SDiv = styled.div`
 
 const IDiv = styled.div`
   text-align: center;
-  margin: 5%;
+  margin: 1%;
  
 `;
 
