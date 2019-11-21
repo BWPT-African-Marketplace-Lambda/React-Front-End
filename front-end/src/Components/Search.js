@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 function Search (props) {
-
+console.log(props)
     const [query, setQuery]=useState('');
 
     const handleChangeSearch = event => {
