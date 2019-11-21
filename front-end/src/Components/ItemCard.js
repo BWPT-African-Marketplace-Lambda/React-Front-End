@@ -107,7 +107,7 @@ function ItemCards(props) {
         </CardGroup>
       </SDiv>
       {/* <h4>{`Customers that bought "${props.item.name}", Frequently bought together the following items:`}</h4> */}
-    </div >
+    </div>
 
   );
 }

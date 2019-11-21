@@ -26,7 +26,11 @@ function Login(props) {
         event.preventDefault()
 
         props.login(user)
-        props.history.push("/userPageList")
+        
+        setTimeout(() => {
+            props.history.push("/userPageList")
+        }, [500])
+        
     }
 
     const handleChange = event => {
