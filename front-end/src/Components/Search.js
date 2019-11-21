@@ -18,8 +18,12 @@ function Search (props) {
 
     const Form = styled.form`
         color: black; 
-        font-family: 'Trocchi', serif;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
+        font-size: 18px;
+        background-color: #C5CBE3;
+        padding: 1%;
+        margin-top: 4.5%;
+        border-top: 1px solid black;
     `;
 
 

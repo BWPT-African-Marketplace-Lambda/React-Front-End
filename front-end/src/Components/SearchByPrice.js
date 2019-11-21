@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 
 
@@ -17,10 +18,22 @@ function SearchByPrice (props) {
         setFormValue('');
     };
 
+    const Form = styled.form`
+        color: black; 
+        letter-spacing: 1px;
+        font-size: 18px;
+        background-color: #C5CBE3;
+        padding: 1%;
+        margin-bottom: 2%;
+        border-bottom: 1px solid black;
+    `;
+    
+
     return(
-        <form  onSubmit={handleSubmit}>
+        <Form  onSubmit={handleSubmit}>
             <label>
-            Enter a price to see everything under that price: 
+            Search by Maximum Price: 
+            &nbsp;
                 <input
                     type='text'
                     name='type'
@@ -29,7 +42,7 @@ function SearchByPrice (props) {
                     onChange={handleChange}
                 />
             </label>
-        </form>
+        </Form>
     )
 }
 
