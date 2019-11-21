@@ -21,11 +21,14 @@ code {
   width: 100%;
   display: flex;
   flex-flow: column wrap;
-  margin-top: 50px;
+
     
 }
 .H1-CardItemCard{
-  font-size:2rem;
+  font-size:2.5rem;
+  color:#7c795d;
+  font-family: 'Trocchi', serif;
+  
 }
 .Footer-Buttons{
   display:flex;
@@ -75,7 +78,10 @@ hr:after {
   transform: rotate(20deg);
   
 }
-/* ItemCard ItemList & ItemsData styling starts ENDS here */
+.Card-hr:after{
+background:white;
+}
+/* ItemCard ItemList & ItemsData styling ENDS here */
 .form-container {
   width: 50%;
   margin: 0 auto;

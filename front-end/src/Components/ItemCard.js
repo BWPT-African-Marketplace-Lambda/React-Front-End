@@ -17,7 +17,6 @@ import {
 const SDiv = styled.div`
   margin: 10px 2.5px;
   border: 2px solid #D79922;
-  
   margin-left: 100px;
   background: white;
   &:hover {
@@ -27,7 +26,8 @@ const SDiv = styled.div`
 
 const IDiv = styled.div`
   text-align: center;
-  margin: 15px;
+  margin: 5%;
+ 
 `;
 
 
@@ -56,6 +56,7 @@ function ItemCards(props) {
                 src={"https://assets.weforum.org/article/image/large_bBsjfn2r-_U89L3OjVWcck849EoScbK0eI4qw1c0O5w.jpg"}
                 alt={props.item.alt}
               />
+              <hr className="Card-hr"></hr>
               <IDiv>
                 <CardText>
                   <strong>Title:</strong>
@@ -67,7 +68,9 @@ function ItemCards(props) {
                   <br />
                   ${props.item.price}
                 </CardText>
+               
               </IDiv>
+              
             </div>
 
             <IDiv className={toggle ? "hidden" : "show"}>
