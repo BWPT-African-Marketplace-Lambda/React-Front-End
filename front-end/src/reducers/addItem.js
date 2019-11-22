@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   newItem: {},
-  isLLoading: false,
+  isLoading: false,
   error: null
 };
 

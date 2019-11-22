@@ -4,12 +4,12 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
-import { reducer as loginReducer } from "./reducers/login"
-import { reducer as signupReducer } from "./reducers/signup"
-import { reducer as fetchItemsReducer } from "./reducers/fetchItems"
-import { reducer as fetchUserByIdReducer } from "./reducers/userItems"
-import { reducer as addItemReducer } from "./reducers/addItem"
-import { reducer as updateUserBioReducer } from "./reducers/updateUserBio"
+import { reducer as loginReducer } from "./reducers/login";
+import { reducer as signupReducer } from "./reducers/signup";
+import { reducer as fetchItemsReducer } from "./reducers/fetchItems";
+import { reducer as fetchUserByIdReducer } from "./reducers/userItems";
+import { reducer as addItemReducer } from "./reducers/addItem";
+import { reducer as updateUserBioReducer } from "./reducers/updateUserBio";
 import { BrowserRouter as Router } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
@@ -23,7 +23,7 @@ const rootReducer = combineReducers({
     fetchItems: fetchItemsReducer,
     userInfo: fetchUserByIdReducer,
     newItem: addItemReducer,
-    userBio: updateUserBioReducer
+    userBio: updateUserBioReducer,
 });
 
 // create our store or "global state object"

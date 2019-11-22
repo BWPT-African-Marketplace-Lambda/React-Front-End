@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import styled from "styled-components"
+import { getToken } from '../utils/api';
+import styled from "styled-components";
 
 import {
   CardFooter,
@@ -12,6 +13,7 @@ import {
   Button,
   CardGroup
 } from "reactstrap";
+import api from "../utils/api";
 
 
 
@@ -39,6 +41,19 @@ const IDiv = styled.div`
 function ItemCards(props) {
   const [toggle, setToggle] = useState(true);
   console.log(props)
+
+  const loggedOn = getToken()
+
+  const deleteItem = (item, id) => {
+    api().delete(`/items/${id}`)
+    .then(res => {
+      console.log('Item was deleted')
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
 
 
   const toggleOpen = () => {
@@ -100,6 +115,11 @@ function ItemCards(props) {
               <CardFooter className="Footer-Buttons">
                 <Button className="Items-Buttons">Add To Cart</Button>
                 <Button className="Items-Buttons">Buy Now!</Button>
+                {loggedOn && <Button onClick={
+                  deleteItem(props.item, props.item.id)} 
+                  className="Items-Buttons">
+                    Delete
+                </Button>}
               </CardFooter>
             </IDiv>
 
