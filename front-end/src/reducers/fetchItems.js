@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   // our "success" state
-  fetchItems: [],
+  items: [],
   // want to make sure we account for all possible states,
   // including the loading and error states
   isLoading: false,
@@ -26,7 +26,7 @@ export function reducer(state = initialState, action) {
     case FETCH_ITEMS_SUCCESS:
       return {
         ...state,
-        fetchItems: action.payload,
+        items: action.payload,
         isLoading: false
       };
     case FETCH_ITEMS_ERROR:
