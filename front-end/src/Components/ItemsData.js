@@ -33,7 +33,6 @@ const ItemsData = () => {
       });
   }, []);
 
-  // const savedData = data;
 
   return (
     <StyledDiv>
