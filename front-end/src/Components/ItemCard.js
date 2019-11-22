@@ -16,12 +16,6 @@ import {
 } from "reactstrap";
 import api from "../utils/api";
 
-
-
-//Here im finding and then matching id coming from data vs ID coming from props.match.params.id so that  result gets saved on variable created named item, to then
-//pass the item down on my card with proper property.
-
-
 const SDiv = styled.div`
   margin: 10px 2.5px;
   border: 2px solid #D79922;
@@ -34,7 +28,8 @@ const SDiv = styled.div`
 
 const IDiv = styled.div`
   text-align: center;
-  margin: 5%;
+  margin: 1%;
+
  
 `;
 
@@ -73,8 +68,8 @@ function ItemCards(props) {
               </CardTitle>
             </CardHeader>
             <div>
-              <CardImg
-                src={"https://assets.weforum.org/article/image/large_bBsjfn2r-_U89L3OjVWcck849EoScbK0eI4qw1c0O5w.jpg"}
+              <CardImg className="card-image"
+                src={props.item.photo_url}
                 alt={props.item.alt}
               />
               <hr className="Card-hr"></hr>
@@ -111,8 +106,7 @@ function ItemCards(props) {
               </CardText>
               <CardFooter className="Footer-Buttons">
 
-                <Button className="Items-Buttons">Add To Cart</Button>
-                <Button className="Items-Buttons">Buy Now!</Button>
+               
                 {loggedOn && <Button onClick={
                   deleteItem} 
                   className="Items-Buttons">
