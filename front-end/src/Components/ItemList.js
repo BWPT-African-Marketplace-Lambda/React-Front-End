@@ -71,41 +71,10 @@ const searchByPriceDisplay = input => {
             alt="vertical image"
 
           />
-          <ImgStyle
-            src={VerticalImage}
-            alt="vertical image"
-
-          />
-          <ImgStyle
-            src={VerticalImage}
-            alt="vertical image"
-
-          />
-           <ImgStyle
-            src={VerticalImage}
-            alt="vertical image"
-
-          />
-           <ImgStyle
-            src={VerticalImage}
-            alt="vertical image"
-
-          />
-           <ImgStyle
-            src={VerticalImage}
-            alt="vertical image"
-
-          />
-           <ImgStyle
-            src={VerticalImage}
-            alt="vertical image"
-
-          />
-           <ImgStyle
-            src={VerticalImage}
-            alt="vertical image"
-
-          />
+        
+         
+         
+           
           
         </ImgDiv>
       </main>

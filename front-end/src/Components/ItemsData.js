@@ -20,11 +20,11 @@ const ItemsData = () => {
 
   useEffect(() => {
     axios
-      .get("https://african-marketplace-bw.herokuapp.com/api/items")
+      .get("https://bw-african-marketplace.herokuapp.com/api/items")
       .then(res => {
         setIsLoading(false)
         setData(res.data)
-        console.log(res.data)
+        console.log(res)
 
       })
       .catch(err => {
