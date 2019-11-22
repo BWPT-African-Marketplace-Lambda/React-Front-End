@@ -16,8 +16,11 @@ import {
 } from "reactstrap";
 import api from "../utils/api";
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 87d5599393a6b36180768ec05275fdcffda3e9d9
 const SDiv = styled.div`
   margin: 10px 2.5px;
   border: 2px solid #D79922;
