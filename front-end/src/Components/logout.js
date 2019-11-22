@@ -1,3 +1,3 @@
-export const logout = () => {
-    return localStorage.removeItem("token")
+export const logout = (props) => {
+    localStorage.removeItem("token")
 }
