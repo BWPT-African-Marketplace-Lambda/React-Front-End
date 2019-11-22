@@ -21,19 +21,7 @@ import api from "../utils/api";
 //Here im finding and then matching id coming from data vs ID coming from props.match.params.id so that  result gets saved on variable created named item, to then
 //pass the item down on my card with proper property.
 
-import {NavLink } from "react-router-dom";
-import styled from 'styled-components';
 
-import {
-   CardFooter,
-    CardImg,
-    CardText,
-    CardBody,
-    CardHeader,
-    CardTitle,
-     Button,
-    CardGroup
-  } from "reactstrap";
 
 
 const SDiv = styled.div`
