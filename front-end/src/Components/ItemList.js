@@ -6,26 +6,12 @@ import SearchByPrice from "./SearchByPrice";
 
 
 import {
-  // CardFooter,
-  // CardImg,
-  // CardText,
-  // CardBody,
-  // CardHeader,
-  // CardTitle,
-  // Button,
   CardGroup
 } from "reactstrap";
 
 import styled from "styled-components";
-import { Link, Route } from "react-router-dom";
 import ItemCard from "./ItemCard"
 
-
-
-const BodyCard = styled.div`
-  display: flex;
-  justify-content: space-around;
-`;
 
 const PageLayout = styled.div`
 display:flex;
@@ -40,14 +26,12 @@ height: 100%;
 const ImgDiv = styled.div`
 width: 100%;
 height: 500px;
+
 `;
 
 const ItemList = props => {
 
   const [savedProps, setSavedProps] = useState(props.savedData)
-  console.log(props)
-/* //Since i have itemList and ItemCard rendering together on same page through App.js */
-/* //ill create this function so that when you click the "check this item out!" it would take customer to the item they are trying to purchase. */
 
   const searchResultDisplay = search => {
     const results = savedProps.filter(datum=>datum.name.toLowerCase().includes(search.toLowerCase()));
@@ -60,12 +44,6 @@ const searchByPriceDisplay = input => {
     const res = savedProps.filter(obj=>obj.price <= input);
     setSavedProps(res);
 };
-
-
-    
-{/* Here on this onClick im passing the function scrollup so that when clicked page moves up to see new product created on (ItemCard component) */}
-
-
 
   return (
     <PageLayout>
@@ -103,13 +81,38 @@ const searchByPriceDisplay = input => {
             alt="vertical image"
 
           />
+           <ImgStyle
+            src={VerticalImage}
+            alt="vertical image"
+
+          />
+           <ImgStyle
+            src={VerticalImage}
+            alt="vertical image"
+
+          />
+           <ImgStyle
+            src={VerticalImage}
+            alt="vertical image"
+
+          />
+           <ImgStyle
+            src={VerticalImage}
+            alt="vertical image"
+
+          />
+           <ImgStyle
+            src={VerticalImage}
+            alt="vertical image"
+
+          />
+          
         </ImgDiv>
       </main>
 
-      <CardGroup className="Styling-CardGroups">
+         <CardGroup className="Styling-CardGroups">
         <Search searchResultDisplay={searchResultDisplay} />
-        <SearchByPrice searchByPriceDisplay={searchByPriceDisplay} />
-
+        <SearchByPrice searchByPriceDisplay={searchByPriceDisplay}/>
         {/* <Route exact path="/ItemList/:id" render={props => <ItemCard {...props} savedProps={savedProps} /> } />  */}
         {props.isLoading ? (
           <h3>...Loading</h3>

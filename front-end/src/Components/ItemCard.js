@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { NavLink } from "react-router-dom";
 import { getToken } from '../utils/api';
 import styled from "styled-components";
@@ -20,13 +21,26 @@ import api from "../utils/api";
 //Here im finding and then matching id coming from data vs ID coming from props.match.params.id so that  result gets saved on variable created named item, to then
 //pass the item down on my card with proper property.
 
+import {NavLink } from "react-router-dom";
+import styled from 'styled-components';
+
+import {
+   CardFooter,
+    CardImg,
+    CardText,
+    CardBody,
+    CardHeader,
+    CardTitle,
+     Button,
+    CardGroup
+  } from "reactstrap";
+
+
 const SDiv = styled.div`
   margin: 10px 2.5px;
-  border: 1px solid black;
-  position: relative;
+  border: 2px solid #D79922;
   margin-left: 100px;
   background: white;
-
   &:hover {
     cursor: pointer;
   }
@@ -34,13 +48,14 @@ const SDiv = styled.div`
 
 const IDiv = styled.div`
   text-align: center;
-  margin: 15px;
+  margin: 5%;
+ 
 `;
 
 
 function ItemCards(props) {
   const [toggle, setToggle] = useState(true);
-  console.log(props)
+  console.log(toggle)
 
   const loggedOn = getToken()
 
@@ -59,15 +74,9 @@ function ItemCards(props) {
   const toggleOpen = () => {
     setToggle(!toggle)
   }
-  //Here im finding and then matching id coming from data vs ID coming from props.match.params.id so that  result gets saved on variable created named item, to then
-  //pass the item down on my card with proper property.
-  // const item = props.savedProps && props.savedProps.find( dataItem => `${dataItem.id}` === props.match.params.id);
 
   return (
     <div>
-
-      {/* <NavLink to="/"> <Button className="Items-Buttons">Back To All Products</Button> </NavLink> */}
-
       <SDiv className={toggle ? "itemCard" : ""} onClick={toggleOpen}>
         <CardGroup className="Styling-CardGroups">
           <CardBody >
@@ -81,7 +90,7 @@ function ItemCards(props) {
                 src={"https://assets.weforum.org/article/image/large_bBsjfn2r-_U89L3OjVWcck849EoScbK0eI4qw1c0O5w.jpg"}
                 alt={props.item.alt}
               />
-              {/* <CardImg src={props.item.photo_url} alt={props.item.alt} /> */}
+              <hr className="Card-hr"></hr>
               <IDiv>
                 <CardText>
                   <strong>Title:</strong>
@@ -91,11 +100,12 @@ function ItemCards(props) {
                 <CardText>
                   <strong>Price:</strong>
                   <br />
-                  {props.item.price}
+                  ${props.item.price}
                 </CardText>
+               
               </IDiv>
+              
             </div>
-
             <IDiv className={toggle ? "hidden" : "show"}>
               <CardText>
                 <strong>City:</strong>
@@ -113,6 +123,7 @@ function ItemCards(props) {
                 {props.item.description}
               </CardText>
               <CardFooter className="Footer-Buttons">
+
                 <Button className="Items-Buttons">Add To Cart</Button>
                 <Button className="Items-Buttons">Buy Now!</Button>
                 {loggedOn && <Button onClick={
@@ -120,16 +131,15 @@ function ItemCards(props) {
                   className="Items-Buttons">
                     Delete
                 </Button>}
+
+                < NavLink to="/signup"> <Button className="Items-Buttons">Sign up for more info!</Button> </NavLink> 
+
               </CardFooter>
             </IDiv>
-
           </CardBody>
         </CardGroup>
       </SDiv>
-      {/* <h4>{`Customers that bought "${props.item.name}", Frequently bought together the following items:`}</h4> */}
-    </div>
-
+</div>
   );
 }
-
 export default ItemCards

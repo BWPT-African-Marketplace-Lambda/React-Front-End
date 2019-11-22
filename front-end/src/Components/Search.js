@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 
 function Search (props) {
-
+console.log(props)
     const [query, setQuery]=useState('');
 
     const handleChangeSearch = event => {
@@ -15,9 +16,19 @@ function Search (props) {
         setQuery('');
     };
 
+    const Form = styled.form`
+        color: black; 
+        letter-spacing: 1px;
+        font-size: 18px;
+        background-color: #C5CBE3;
+        padding: 1%;
+        margin-top: 4.5%;
+        border-top: 1px solid black;
+    `;
+
 
     return (
-        <form className="search" onSubmit={handleSubmit}>
+        <Form className="search" onSubmit={handleSubmit}>
             <label>
                 Search by Product Name: 
                 &nbsp;
@@ -29,7 +40,7 @@ function Search (props) {
                     placeholder='type product name'
                 />
             </label>
-        </form>
+        </Form>
     );
 };
 

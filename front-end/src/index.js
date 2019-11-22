@@ -20,7 +20,7 @@ import App from './App';
 const rootReducer = combineReducers({
     user: loginReducer,
     newUser: signupReducer,
-    fetchItems: fetchItemsReducer,
+    items: fetchItemsReducer,
     userInfo: fetchUserByIdReducer,
     newItem: addItemReducer,
     userBio: updateUserBioReducer,

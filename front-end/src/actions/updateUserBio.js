@@ -8,7 +8,7 @@ export const UPDATE_USER_BIO_ERROR = "UPDATE_USER_BIO_ERROR"
 
 export function updateUserBio (updatedInfo) {
   return dispatch => {
-    dispatchEvent({ type: UPDATE_USER_BIO_START });
+    dispatch({ type: UPDATE_USER_BIO_START });
 
     api()
     .put(`/users/${localStorage.getItem("user_id")}`, updatedInfo)
