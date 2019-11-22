@@ -16,8 +16,6 @@ import {
 } from "reactstrap";
 import api from "../utils/api";
 
-
-
 const SDiv = styled.div`
   margin: 10px 2.5px;
   border: 2px solid #D79922;
@@ -42,11 +40,12 @@ function ItemCards(props) {
 
   const loggedOn = getToken()
 
-  const deleteItem = (item, id) => {
-    api().delete(`/items/${id}`)
+  const deleteItem = () => {
+    api().delete(`/items/${props.item.id}`)
     .then(res => {
       console.log('Item was deleted')
       console.log(res)
+      window.location.reload()
     })
     .catch(err => {
       console.log(err)
@@ -109,7 +108,7 @@ function ItemCards(props) {
 
                
                 {loggedOn && <Button onClick={
-                  deleteItem(props.item, props.item.id)} 
+                  deleteItem} 
                   className="Items-Buttons">
                     Delete
                 </Button>}
