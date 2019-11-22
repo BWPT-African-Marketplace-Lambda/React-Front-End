@@ -66,9 +66,9 @@ function UserPage(props) {
             </Section>
 
 
-            {/* {props.items.map((item, index) => (
+            {props.items.map((item, index) => (
               <UserItem item={item} key={index} />
-            ))} */}
+            ))}
           </div>
         )}
     </>
