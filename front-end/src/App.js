@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, withRouter } from 'react-router-dom';
+import NavBar from './Components/NavBar';
+import ItemsData from "./Components/ItemsData";
 import './App.css';
+import Login from "./Components/Login"
+import Signup from "./Components/Signup"
+import UserPageList from "./Components/userPage";
+import AddListing from './Components/AddListing';
+import ProtectedRoute from './Components/ProtectedRoute';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Route path='/' component={NavBar}/>
+      <ProtectedRoute path="/add-listing" component={AddListing} />
+      <Route path="/login" component={Login}/>
+      <Route path="/signup" component={Signup}/>
+      <Route exact path="/" component={ItemsData}/>
+      <ProtectedRoute path="/userPageList" component={UserPageList}/>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
