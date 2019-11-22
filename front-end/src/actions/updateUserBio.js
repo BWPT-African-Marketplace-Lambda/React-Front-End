@@ -14,6 +14,7 @@ export function updateUserBio (updatedInfo) {
     .put(`/users/${localStorage.getItem("user_id")}`, updatedInfo)
     .then(res => {
       dispatch({ type: UPDATE_USER_BIO_SUCCESS, payload: res.data })
+      console.log(res.data)
     })
     .catch(err => {
       dispatch({ type: UPDATE_USER_BIO_ERROR, payload: err })

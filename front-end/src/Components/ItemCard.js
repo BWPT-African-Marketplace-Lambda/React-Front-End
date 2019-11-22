@@ -21,20 +21,6 @@ import api from "../utils/api";
 //Here im finding and then matching id coming from data vs ID coming from props.match.params.id so that  result gets saved on variable created named item, to then
 //pass the item down on my card with proper property.
 
-import {NavLink } from "react-router-dom";
-import styled from 'styled-components';
-
-import {
-   CardFooter,
-    CardImg,
-    CardText,
-    CardBody,
-    CardHeader,
-    CardTitle,
-     Button,
-    CardGroup
-  } from "reactstrap";
-
 
 const SDiv = styled.div`
   margin: 10px 2.5px;
@@ -59,11 +45,12 @@ function ItemCards(props) {
 
   const loggedOn = getToken()
 
-  const deleteItem = (item, id) => {
-    api().delete(`/items/${id}`)
+  const deleteItem = () => {
+    api().delete(`/items/${props.item.id}`)
     .then(res => {
       console.log('Item was deleted')
       console.log(res)
+      window.location.reload()
     })
     .catch(err => {
       console.log(err)
@@ -127,7 +114,7 @@ function ItemCards(props) {
                 <Button className="Items-Buttons">Add To Cart</Button>
                 <Button className="Items-Buttons">Buy Now!</Button>
                 {loggedOn && <Button onClick={
-                  deleteItem(props.item, props.item.id)} 
+                  deleteItem} 
                   className="Items-Buttons">
                     Delete
                 </Button>}
