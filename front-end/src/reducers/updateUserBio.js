@@ -12,7 +12,8 @@ const initialState = {
     avatar_url: defaultAvatar,
     about: "Add your about information",
     email: "Update your email",
-    username: "Update your username"
+    username: "Update your username",
+    id: 1
   },
   isLoading: false,
   error: null
