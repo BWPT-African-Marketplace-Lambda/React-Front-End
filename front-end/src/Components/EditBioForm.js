@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
 
 function EditBioForm(props) {
   const [update, setUpdated] = useState({
@@ -11,13 +11,18 @@ function EditBioForm(props) {
 
   const toggle = () => setModal(!modal);
 
-  const saveInfo = () => {
-
+  const saveInfo = (event) => {
+    event.preventDefault()
+    props.updateUserBio(update)
+    setModal(!modal)
   }
 
   const handleChange = event => {
-    event.preventDefault()
-    
+
+    setUpdated({
+      ...update,
+      [event.target.name]: event.target.value
+    })
   }
 
   return (
@@ -26,14 +31,19 @@ function EditBioForm(props) {
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Update your Bio Information</ModalHeader>
         <ModalBody>
-          <form>
-            <input type="text" name="username" onChange={handleChange} value={update.username} placeholder="Username" />
-            <input type="email" name="email" onChange={handleChange} value={update.email} placeholder="Email" />
-            <input type="textarea" name="about" onChange={handleChange} value={update.about} placeholder="About" />
-          </form>
+          <Form>
+            <FormGroup>
+              <Label for="username">Username</Label>
+              <Input type="text" name="username" id="username" onChange={handleChange} value={update.username} placeholder="Username" />
+              <Label for="email">Email</Label>
+              <Input type="email" name="email" id="email" onChange={handleChange} value={update.email} placeholder="Email" />
+              <Label for="about">About</Label>
+              <Input type="textarea" name="about" id="about" onChange={handleChange} value={update.about} placeholder="About" />
+            </FormGroup>
+          </Form>
         </ModalBody>
         <ModalFooter>
-          <Button color="link" onClick={toggle}>Save</Button>
+          <Button color="link" onClick={saveInfo}>Save</Button>
           <Button color="link" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>

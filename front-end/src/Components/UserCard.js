@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import EditUserPhoto from "./EditUserPhoto"
 import EditBioForm from "./EditBioForm"
-// import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { logout } from "./logout"
 import { Dropdown } from "react-bootstrap";
 
 function UserCard(props) {
@@ -14,12 +14,11 @@ function UserCard(props) {
   return (
     <>
       <div className="userCard">
-        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <Dropdown.Toggle 
-          className=""
-          variant="link"
-          id="dropdown-basic">
-            Edit Information
+        <Dropdown>
+          <Dropdown.Toggle
+            variant="link"
+            id="dropdown-basic">
+            Edit Photo
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item>
@@ -30,19 +29,19 @@ function UserCard(props) {
                 setDefaultImg={props.setDefaultImg} />
             </Dropdown.Item>
             <Dropdown.Item>
-              <EditBioForm
-                userBio={props.userBio}
-                updateUserBio={props.updateUserBio} />
+
             </Dropdown.Item>
             <Dropdown.Item />
-            <Dropdown.Item>Logout</Dropdown.Item>
+            <Dropdown.Item onClick={() => logout}>Logout</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <img src={localStorage.getItem("photo") || props.defaultImg} alt="profile avatar" />
-
-
-
-        <h1>{props.userInfo.email}</h1>
+        <img className="userImg" src={localStorage.getItem("photo") || props.defaultImg} alt="profile avatar" />
+        <EditBioForm
+          userBio={props.userBio}
+          updateUserBio={props.updateUserBio} />
+        <h3>{props.userBio.username}</h3>
+        <h3>{props.userBio.email}</h3>
+        <h3>{props.userBio.about}</h3>
       </div>
     </>
   )

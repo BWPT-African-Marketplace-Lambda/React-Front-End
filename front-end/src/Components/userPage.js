@@ -11,7 +11,6 @@ import UserItem from "./UserItem"
 
 function UserPage(props) {
   const [defaultImg, setDefaultImg] = useState("")
-  // const [items, setItems] = useState([])
 
 
   const StyledH1 = styled.h1`
@@ -28,7 +27,7 @@ function UserPage(props) {
 
   const Section = styled.section`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   `
 
@@ -67,9 +66,9 @@ function UserPage(props) {
             </Section>
 
 
-            {props.items.map((item, index) => (
+            {/* {props.items.map((item, index) => (
               <UserItem item={item} key={index} />
-            ))}
+            ))} */}
           </div>
         )}
     </>
