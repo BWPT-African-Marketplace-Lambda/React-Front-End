@@ -13,19 +13,20 @@ code {
 }
 
 /* ItemCard ItemList & ItemsData styling STARTS here */
-.ItemList-Image {
-  width: 15%;
-  border-radius: 80%;
+.card-image{
+  width:80%;
+  margin:2% 0;
 }
 .Styling-CardGroups {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-flow: column wrap;
+  margin-left:5%;
 
     
 }
 .H1-CardItemCard{
-  font-size:2.5rem;
+  font-size:2rem;
   color:#7c795d;
   font-family: 'Trocchi', serif;
   

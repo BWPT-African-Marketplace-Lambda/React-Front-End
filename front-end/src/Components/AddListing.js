@@ -40,7 +40,7 @@ function AddListing(props) {
     event.preventDefault()
 
     props.addItem(item)
-    props.history.push("/")
+    
     console.log(item)
   }
 

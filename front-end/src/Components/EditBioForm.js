@@ -5,7 +5,8 @@ function EditBioForm(props) {
   const [update, setUpdated] = useState({
     email: "",
     about: "",
-    username: ""
+    username: "",
+    id: localStorage.getItem("user_id")
   })
   const [modal, setModal] = useState(false);
 
