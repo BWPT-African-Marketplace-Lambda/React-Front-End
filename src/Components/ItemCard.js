@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { getToken } from '../utils/api';
 import styled from "styled-components";
+import vegetables from "../images/vegetables1.jpg";
 
 import {
   CardFooter,
@@ -21,6 +22,7 @@ const SDiv = styled.div`
   border: 2px solid #D79922;
   margin-left: 100px;
   background: white;
+  height: 950px;
   &:hover {
     cursor: pointer;
   }
@@ -69,7 +71,7 @@ function ItemCards(props) {
             </CardHeader>
             <div>
               <CardImg className="card-image"
-                src={props.item.photo_url}
+                src={vegetables}
                 alt={props.item.alt}
               />
               <hr className="Card-hr"></hr>

@@ -36,7 +36,7 @@ function Signup(props) {
         props.signup(user)
         setTimeout(() => {
             props.history.push("/userPageList")
-        })
+        }, [500])
         
     }
 
