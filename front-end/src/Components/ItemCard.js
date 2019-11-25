@@ -104,14 +104,13 @@ function ItemCards(props) {
               <CardFooter className="Footer-Buttons">
 
                
-                {loggedOn && <Button onClick={
-                  deleteItem} 
+                {loggedOn ? ( <Button onClick={deleteItem} 
                   className="Items-Buttons">
                     Delete
-                </Button>}
+                </Button> ) : (
 
                 < NavLink to="/signup"> <Button className="Items-Buttons">Sign up for more info!</Button> </NavLink> 
-
+                )}
               </CardFooter>
             </IDiv>
           </CardBody>
