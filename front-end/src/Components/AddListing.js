@@ -44,10 +44,10 @@ function AddListing(props) {
       city: "",
       country: "",
       price: [],
-      description: "",
+      description: ""
     })
-    console.log(item)
-  }
+    
+
 
   return (
     <div>
