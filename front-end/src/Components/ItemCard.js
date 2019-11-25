@@ -18,14 +18,9 @@ import {
 import api from "../utils/api";
 
 const SDiv = styled.div`
-  margin: 10px 2.5px;
-  border: 2px solid #D79922;
-  margin-left: 100px;
-  background: white;
-  height: 950px;
-  &:hover {
-    cursor: pointer;
-  }
+&:hover {
+  cursor: pointer;
+}
 `;
 
 const IDiv = styled.div`
@@ -61,7 +56,7 @@ function ItemCards(props) {
 
   return (
     <div>
-      <SDiv className={toggle ? "itemCard" : ""} onClick={toggleOpen}>
+      <SDiv className={toggle ? "itemCard" : "expanded"} onClick={toggleOpen}>
         <CardGroup className="Styling-CardGroups">
           <CardBody >
             <CardHeader className="CardHeader-Items" >
