@@ -38,9 +38,14 @@ function AddListing(props) {
 
   const handleSubmit = event => {
     event.preventDefault()
-
     props.addItem(item)
-    
+    setItem({
+      name: "",
+      city: "",
+      country: "",
+      price: [],
+      description: "",
+    })
     console.log(item)
   }
 
