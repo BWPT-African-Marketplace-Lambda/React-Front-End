@@ -46,7 +46,7 @@ function AddListing(props) {
       price: [],
       description: ""
     })
-    
+  }
 
 
   return (
