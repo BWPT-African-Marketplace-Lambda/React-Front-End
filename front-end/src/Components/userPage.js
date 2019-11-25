@@ -7,7 +7,7 @@ import UserCard from "./UserCard"
 import styled from "styled-components";
 import defaultAvatar from "../images/default-avatar.png"
 import AddListing from "./AddListing"
-import UserItem from "./UserItem"
+
 
 function UserPage(props) {
   const [defaultImg, setDefaultImg] = useState("")
@@ -21,9 +21,6 @@ function UserPage(props) {
     padding: 5%;
   `;
 
-  const StyledStrong = styled.strong`
-  color: #7c795d; font-family: 'Trocchi', serif; font-size: 5rem; font-weight: normal; line-height: 48px; margin: 0;
-  `;
 
   const Section = styled.section`
   display: flex;
@@ -64,11 +61,6 @@ function UserPage(props) {
 
               <AddListing />
             </Section>
-
-
-            {/* {props.items.map((item, index) => (
-              <UserItem item={item} key={index} />
-            ))} */}
           </div>
         )}
     </>

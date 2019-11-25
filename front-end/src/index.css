@@ -13,19 +13,20 @@ code {
 }
 
 /* ItemCard ItemList & ItemsData styling STARTS here */
-.ItemList-Image {
-  width: 15%;
-  border-radius: 80%;
+.card-image{
+  width:80%;
+  margin:2% 0;
 }
 .Styling-CardGroups {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-flow: column wrap;
+  margin-left:5%;
 
     
 }
 .H1-CardItemCard{
-  font-size:2.5rem;
+  font-size:2rem;
   color:#7c795d;
   font-family: 'Trocchi', serif;
   
@@ -82,6 +83,31 @@ hr:after {
 background:white;
 }
 /* ItemCard ItemList & ItemsData styling ENDS here */
+
+
+/* Search field*/
+.search {
+  color: black; 
+  letter-spacing: 1px;
+  font-size: 18px;
+  background-color: #C5CBE3;
+  padding: 1%;
+  margin-top: 4.5%;
+  border-top: 1px solid black;
+}
+/*Search styling ends here */
+.searchbyPrice{
+  color: black; 
+        letter-spacing: 1px;
+        font-size: 18px;
+        background-color: #C5CBE3;
+        padding: 1%;
+        margin-bottom: 2%;
+        border-bottom: 1px solid black;
+}
+/* Search by price stiling*/
+
+/*Search by pricing styling ends here*/
 .form-container {
   width: 50%;
   margin: 0 auto;

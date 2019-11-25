@@ -24,7 +24,7 @@ const ItemsData = () => {
       .then(res => {
         setIsLoading(false)
         setData(res.data)
-        console.log(res.data)
+        console.log(res)
 
       })
       .catch(err => {
@@ -33,7 +33,6 @@ const ItemsData = () => {
       });
   }, []);
 
-  // const savedData = data;
 
   return (
     <StyledDiv>

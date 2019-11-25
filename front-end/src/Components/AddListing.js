@@ -38,11 +38,7 @@ function AddListing(props) {
 
   const handleSubmit = event => {
     event.preventDefault()
-
     props.addItem(item)
-
-    
-
     setItem({
       name: "",
       city: "",
@@ -51,8 +47,7 @@ function AddListing(props) {
       description: ""
     })
     
-    console.log(item)
-  }
+
 
   return (
     <div>
