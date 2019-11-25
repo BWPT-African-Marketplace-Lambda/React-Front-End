@@ -36,7 +36,7 @@ const ItemsData = () => {
 
   return (
     <StyledDiv>
-      <StyledH1><StyledStrong>Saudi Africa</StyledStrong> <br></br> Product Marketplace </StyledH1>
+      <StyledH1><StyledStrong>Sauti Africa</StyledStrong> <br></br> Product Marketplace </StyledH1>
       <hr></hr>
 
       <ItemList
