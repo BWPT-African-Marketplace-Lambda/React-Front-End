@@ -5,9 +5,11 @@ import styled from "styled-components";
 
 
 const ItemsData = () => {
+  //hooks made to save data coming from AXIOS
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true)
 
+  //styled components made for the header
   const StyledH1 = styled.h1`
     font-size: 2.5rem; font-weight: 300; color: #ffcc66; margin: 0 0 24px;
   `;
@@ -36,7 +38,8 @@ const ItemsData = () => {
 
   return (
     <StyledDiv>
-      <StyledH1><StyledStrong>Saudi Africa</StyledStrong> <br></br> Product Marketplace </StyledH1>
+      <StyledH1><StyledStrong>Sauti Africa</StyledStrong> <br></br> Product Marketplace </StyledH1>
+      {/* hr styled through CSS*/}
       <hr></hr>
 
       <ItemList
