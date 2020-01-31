@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { getToken } from '../utils/api';
 import styled from "styled-components";
+import vegetables from "../images/vegetables1.jpg";
 
 import {
   CardFooter,
@@ -17,13 +18,9 @@ import {
 import api from "../utils/api";
 
 const SDiv = styled.div`
-  margin: 10px 2.5px;
-  border: 2px solid #D79922;
-  margin-left: 100px;
-  background: white;
-  &:hover {
-    cursor: pointer;
-  }
+&:hover {
+  cursor: pointer;
+}
 `;
 
 const IDiv = styled.div`
@@ -59,7 +56,7 @@ function ItemCards(props) {
 
   return (
     <div>
-      <SDiv className={toggle ? "itemCard" : ""} onClick={toggleOpen}>
+      <SDiv className={toggle ? "itemCard" : "expanded"} onClick={toggleOpen}>
         <CardGroup className="Styling-CardGroups">
           <CardBody >
             <CardHeader className="CardHeader-Items" >
@@ -69,7 +66,7 @@ function ItemCards(props) {
             </CardHeader>
             <div>
               <CardImg className="card-image"
-                src={props.item.photo_url}
+                src={vegetables}
                 alt={props.item.alt}
               />
               <hr className="Card-hr"></hr>
@@ -107,14 +104,13 @@ function ItemCards(props) {
               <CardFooter className="Footer-Buttons">
 
                
-                {loggedOn && <Button onClick={
-                  deleteItem} 
+                {loggedOn ? ( <Button onClick={deleteItem} 
                   className="Items-Buttons">
                     Delete
-                </Button>}
+                </Button> ) : (
 
                 < NavLink to="/signup"> <Button className="Items-Buttons">Sign up for more info!</Button> </NavLink> 
-
+                )}
               </CardFooter>
             </IDiv>
           </CardBody>
